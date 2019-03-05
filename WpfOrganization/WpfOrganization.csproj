@@ -36,7 +36,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,6 +65,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DAL\Entities\CableTVRepairProblem.cs" />
+    <Compile Include="DAL\Entities\City.cs" />
+    <Compile Include="DAL\Entities\RepairAndRestructionRequest.cs" />
+    <Compile Include="DAL\Entities\EecutionStatus.cs" />
+    <Compile Include="DAL\Entities\Subscriber.cs" />
+    <Compile Include="DAL\Entities\Master.cs" />
+    <Compile Include="DAL\Entities\RelationshipType.cs" />
+    <Compile Include="DAL\Entities\Request.cs" />
+    <Compile Include="DAL\Entities\Street.cs" />
+    <Compile Include="DAL\Entities\StreetType.cs" />
+    <Compile Include="DAL\Entities\User.cs" />
     <Compile Include="ViewModel\AuthorizationWindowViewModel.cs" />
     <Compile Include="View\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
