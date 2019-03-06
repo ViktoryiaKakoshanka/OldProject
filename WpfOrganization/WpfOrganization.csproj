@@ -35,10 +35,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -65,17 +70,22 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAL\Entities\CableTVRepairProblem.cs" />
+    <Compile Include="DAL\EF\CableTVContext.cs" />
+    <Compile Include="DAL\Entities\Address.cs" />
+    <Compile Include="DAL\Entities\CableTVProblem.cs" />
     <Compile Include="DAL\Entities\City.cs" />
-    <Compile Include="DAL\Entities\RepairAndRestructionRequest.cs" />
-    <Compile Include="DAL\Entities\EecutionStatus.cs" />
+    <Compile Include="DAL\Entities\FullName.cs" />
+    <Compile Include="DAL\Entities\OrderRepairAndRestruction.cs" />
+    <Compile Include="DAL\Entities\OrderStatus.cs" />
     <Compile Include="DAL\Entities\Subscriber.cs" />
     <Compile Include="DAL\Entities\Master.cs" />
     <Compile Include="DAL\Entities\RelationshipType.cs" />
-    <Compile Include="DAL\Entities\Request.cs" />
+    <Compile Include="DAL\Entities\OrderOnCableTV.cs" />
     <Compile Include="DAL\Entities\Street.cs" />
     <Compile Include="DAL\Entities\StreetType.cs" />
     <Compile Include="DAL\Entities\User.cs" />
+    <Compile Include="DAL\Entities\UserAction.cs" />
+    <Compile Include="DAL\Entities\SubscriberRelationship.cs" />
     <Compile Include="ViewModel\AuthorizationWindowViewModel.cs" />
     <Compile Include="View\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
@@ -100,6 +110,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

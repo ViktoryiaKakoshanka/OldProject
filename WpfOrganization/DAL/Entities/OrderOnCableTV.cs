@@ -3,8 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WpfOrganization.DAL.Entities
 {
-    public class Request
+    public class OrderOnCableTV
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [ForeignKey("Subscriber")]
@@ -16,19 +17,19 @@ namespace WpfOrganization.DAL.Entities
         public string Remark { get; set; }
 
         public int? CableTVRepairProblemId { get; set; }
-        public CableTVRepairProblem Problem { get; set; }
+        public CableTVProblem Problem { get; set; }
         public string NonStandardProblem { get; set; }
 
         public int? MasterId { get; set; }
         public Master Master { get; set; }
 
-        public EecutionStatus EecutionStatus { get; set; }
-        public DateTime DateOfExecution { get; set; }
-        public DateTime DateOfCallback { get; set; }
+        public ExecutionStatus EecutionStatus { get; set; }
+        public DateTime ExecutionDate { get; set; }
+        public DateTime CallbackDate { get; set; }
 
         public bool IsCollectiveRequest { get; set; }
 
-        public DateTime DateOfCreation { get; set; }
+        public DateTime CreationDate { get; set; }
         public DateTime EstimatedCompletionDate { get; set; }
     }
 }
