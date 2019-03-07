@@ -3,13 +3,11 @@ using WpfOrganization.DAL.Entities;
 
 namespace WpfOrganization.DAL.EF
 {
-    public class CableTVContext : DbContext
+    public class DatabaseContext : DbContext
     {
         public DbSet<Master> Masters { get; set; }
-
-
+        
         public DbSet<CableTVProblem> CableTvProblems { get; set; }
-        public DbSet<OrderStatus> OrderStatuses { get; set; }
         public DbSet<OrderOnCableTV> OrdersOnCableTv { get; set; }
         public DbSet<OrderRepairAndRestruction> OrdersRepairAndRestruction { get; set; }
 
@@ -24,12 +22,12 @@ namespace WpfOrganization.DAL.EF
         public DbSet<User> Users { get; set; }
         public DbSet<UserAction> UserActions { get; set; }
 
-        static CableTVContext()
+        static DatabaseContext()
         {
-            Database.SetInitializer<CableTVContext>(new DropCreateDatabaseIfModelChanges<CableTVContext>());
+            Database.SetInitializer(new DbInitializer());
         }
 
-        public CableTVContext(string connectionString) : base(connectionString)
+        public DatabaseContext(string connectionString) : base(connectionString)
         {
 
         }

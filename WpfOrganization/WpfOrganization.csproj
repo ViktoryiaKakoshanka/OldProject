@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -44,6 +47,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -70,13 +76,22 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAL\EF\CableTVContext.cs" />
+    <Compile Include="BLL\DTO\CableTVProblemDTO.cs" />
+    <Compile Include="BLL\DTO\CityDTO.cs" />
+    <Compile Include="BLL\DTO\MasterDTO.cs" />
+    <Compile Include="BLL\DTO\OrderOnCableTVDTO.cs" />
+    <Compile Include="BLL\DTO\OrderRepairAndRestructionDTO.cs" />
+    <Compile Include="BLL\DTO\OrderStatus.cs" />
+    <Compile Include="BLL\Infrastructure\ValidationException.cs" />
+    <Compile Include="BLL\Interfaces\IOrderService.cs" />
+    <Compile Include="BLL\Services\OrderOnCableTVService.cs" />
+    <Compile Include="DAL\EF\DatabaseContext.cs" />
+    <Compile Include="DAL\EF\DbInitializer.cs" />
     <Compile Include="DAL\Entities\Address.cs" />
     <Compile Include="DAL\Entities\CableTVProblem.cs" />
     <Compile Include="DAL\Entities\City.cs" />
     <Compile Include="DAL\Entities\FullName.cs" />
     <Compile Include="DAL\Entities\OrderRepairAndRestruction.cs" />
-    <Compile Include="DAL\Entities\OrderStatus.cs" />
     <Compile Include="DAL\Entities\Subscriber.cs" />
     <Compile Include="DAL\Entities\Master.cs" />
     <Compile Include="DAL\Entities\RelationshipType.cs" />
@@ -86,6 +101,14 @@
     <Compile Include="DAL\Entities\User.cs" />
     <Compile Include="DAL\Entities\UserAction.cs" />
     <Compile Include="DAL\Entities\SubscriberRelationship.cs" />
+    <Compile Include="DAL\Interfaces\IRepository.cs" />
+    <Compile Include="DAL\Interfaces\IUnitOfWork.cs" />
+    <Compile Include="DAL\Repositories\CableTVProblemRepository.cs" />
+    <Compile Include="DAL\Repositories\CityRepository.cs" />
+    <Compile Include="DAL\Repositories\EFUnitOfWork.cs" />
+    <Compile Include="DAL\Repositories\MasterRepository.cs" />
+    <Compile Include="DAL\Repositories\OrderOnCableTVRepository.cs" />
+    <Compile Include="DAL\Repositories\OrderRepairAndRestructionRepository.cs" />
     <Compile Include="ViewModel\AuthorizationWindowViewModel.cs" />
     <Compile Include="View\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>

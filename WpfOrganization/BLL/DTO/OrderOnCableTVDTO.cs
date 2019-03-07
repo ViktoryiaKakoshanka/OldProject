@@ -1,29 +1,23 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WpfOrganization.DAL.Entities
+namespace WpfOrganization.BLL.DTO
 {
-    public class OrderOnCableTV
+    public class OrderOnCableTVDTO
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
-        [ForeignKey("Subscriber")]
-        public int NumberOfContract { get; set; }
-        public Subscriber Subscriber { get; set; }
+        
+        public int SubscriberId { get; set; }
 
         public string UserLocation { get; set; }
         public string PhoneNumber { get; set; }
         public string Remark { get; set; }
 
         public int? CableTVProblemId { get; set; }
-        public CableTVProblem Problem { get; set; }
         public string NonStandardProblem { get; set; }
 
         public int? MasterId { get; set; }
-        public Master Master { get; set; }
 
-        public string OrderStatus { get; set; }
+        public OrderStatus Status { get; set; }
         public DateTime ExecutionDate { get; set; }
         public DateTime CallbackDate { get; set; }
 
