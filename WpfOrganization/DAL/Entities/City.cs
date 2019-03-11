@@ -19,7 +19,7 @@ namespace WpfOrganization.DAL.Entities
         {
             Streets = new List<Street>();
             Masters = new List<Master>();
-            Subscribers = new List<Subscriber>();
+            Subscribers = new List<Subscriber>();/**/
         }
     }
 }

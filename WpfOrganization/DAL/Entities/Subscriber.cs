@@ -21,6 +21,12 @@ namespace WpfOrganization.DAL.Entities
         public int? RelationshipTypeId { get; set; }
         public RelationshipType RelationshipType { get; set; }
 
+        public int? CityId { get; set; }
+        public City City { get; set; }
+
+        public int? StreetId { get; set; }
+        public Street Street { get; set; }
+
         public Address Address { get; set; }
 
         public virtual ICollection<SubscriberRelationship> RelationshipHistory { get; set; }

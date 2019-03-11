@@ -19,6 +19,12 @@ namespace WpfOrganization.DAL.Entities
         public int? MasterPerformerId { get; set; }
         public Master MasterPerformer { get; set; }
 
+        public int? CityId { get; set; }
+        public City City { get; set; }
+
+        public int? StreetId { get; set; }
+        public Street Street { get; set; }
+
         public Address Address { get; set; }
 
         public string Problem { get; set; }

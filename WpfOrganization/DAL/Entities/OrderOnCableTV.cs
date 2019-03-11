@@ -7,9 +7,8 @@ namespace WpfOrganization.DAL.Entities
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
-        [ForeignKey("Subscriber")]
-        public int NumberOfContract { get; set; }
+        
+        public int SubscriberId { get; set; }
         public Subscriber Subscriber { get; set; }
 
         public string UserLocation { get; set; }
