@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using WpfOrganization.BLL.DTO;
 
 namespace WpfOrganization.DAL.Entities
 {
@@ -22,9 +23,9 @@ namespace WpfOrganization.DAL.Entities
         public int? MasterId { get; set; }
         public Master Master { get; set; }
 
-        public string OrderStatus { get; set; }
-        public DateTime ExecutionDate { get; set; }
-        public DateTime CallbackDate { get; set; }
+        public OrderStatus OrderStatus { get; set; }
+        public DateTime? ExecutionDate { get; set; }
+        public DateTime? CallbackDate { get; set; }
 
         public bool IsCollectiveRequest { get; set; }
 

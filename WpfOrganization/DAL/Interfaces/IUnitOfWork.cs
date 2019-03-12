@@ -1,24 +1,25 @@
-﻿using WpfOrganization.DAL.Entities;
+﻿using System;
+using WpfOrganization.DAL.Entities;
 
 namespace WpfOrganization.DAL.Interfaces
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
-        IRepository<Master> Masters { get; }
-        IRepository<CableTVProblem> CableTVProblems { get; }
-        IRepository<OrderOnCableTV> OrdersOnCableTV { get; }
-        IRepository<OrderRepairAndRestruction> OrdersRepairAndRestruction { get; }
+        IGenericRepository<Master> Masters { get; }
+        IGenericRepository<CableTVProblem> CableTVProblems { get; }
+        IGenericRepository<OrderOnCableTV> OrdersOnCableTV { get; }
+        IGenericRepository<OrderRepairAndRestruction> OrdersRepairAndRestruction { get; }
 
-        IRepository<City> Cities { get; }
-        IRepository<Street> Streets { get; }
-        IRepository<StreetType> StreetTypes { get; }
+        IGenericRepository<City> Cities { get; }
+        IGenericRepository<Street> Streets { get; }
+        IGenericRepository<StreetType> StreetTypes { get; }
 
-        IRepository<Subscriber> Subscribers { get; }
-        IRepository<RelationshipType> RelationshipTypes { get; }
-        IRepository<SubscriberRelationship> SubscriberRelationships { get; }
+        IGenericRepository<Subscriber> Subscribers { get; }
+        IGenericRepository<RelationshipType> RelationshipTypes { get; }
+        IGenericRepository<SubscriberRelationship> SubscriberRelationships { get; }
 
-        IRepository<User> Users { get; }
-        IRepository<UserAction> UserActionHistory { get; }
+        IGenericRepository<User> Users { get; }
+        IGenericRepository<UserAction> UserActionHistory { get; }
 
         void Save();
     }

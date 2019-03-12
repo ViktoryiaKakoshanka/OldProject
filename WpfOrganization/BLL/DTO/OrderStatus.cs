@@ -2,18 +2,11 @@
 
 namespace WpfOrganization.BLL.DTO
 {
-    public enum OrderStatus
+    public enum OrderStatus : byte
     {
-        [Display(Name = "Создан")]
-        Created,
-
-        [Display(Name = "Поручен")]
-        Delegated,
-
-        [Display(Name = "Выполнен")]
-        Completed,
-
-        [Display(Name = "Проверен")]
-        Checked
+        Created = 1,
+        Delegated = 2,
+        Completed = 3,
+        Checked = 4
     }
 }

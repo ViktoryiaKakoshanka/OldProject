@@ -44,6 +44,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -76,12 +79,21 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BLL\DTO\AdminRole.cs" />
     <Compile Include="BLL\DTO\CableTVProblemDTO.cs" />
     <Compile Include="BLL\DTO\CityDTO.cs" />
+    <Compile Include="BLL\DTO\StreetDTO.cs" />
     <Compile Include="BLL\DTO\MasterDTO.cs" />
     <Compile Include="BLL\DTO\OrderOnCableTVDTO.cs" />
     <Compile Include="BLL\DTO\OrderRepairAndRestructionDTO.cs" />
     <Compile Include="BLL\DTO\OrderStatus.cs" />
+    <Compile Include="BLL\DTO\RelationshipTypeDTO.cs" />
+    <Compile Include="BLL\DTO\StreetTypeDTO.cs" />
+    <Compile Include="BLL\DTO\SubscriberDTO.cs" />
+    <Compile Include="BLL\DTO\SubscriberRelationshipDTO.cs" />
+    <Compile Include="BLL\DTO\UserActionDTO.cs" />
+    <Compile Include="BLL\DTO\UserDTO.cs" />
+    <Compile Include="BLL\Infrastructure\ServiceModule.cs" />
     <Compile Include="BLL\Infrastructure\ValidationException.cs" />
     <Compile Include="BLL\Interfaces\IOrderService.cs" />
     <Compile Include="BLL\Services\OrderOnCableTVService.cs" />
@@ -101,14 +113,10 @@
     <Compile Include="DAL\Entities\User.cs" />
     <Compile Include="DAL\Entities\UserAction.cs" />
     <Compile Include="DAL\Entities\SubscriberRelationship.cs" />
-    <Compile Include="DAL\Interfaces\IRepository.cs" />
+    <Compile Include="DAL\Interfaces\IGenericRepository.cs" />
     <Compile Include="DAL\Interfaces\IUnitOfWork.cs" />
-    <Compile Include="DAL\Repositories\CableTVProblemRepository.cs" />
-    <Compile Include="DAL\Repositories\CityRepository.cs" />
+    <Compile Include="DAL\Repositories\GenericRepository.cs" />
     <Compile Include="DAL\Repositories\EFUnitOfWork.cs" />
-    <Compile Include="DAL\Repositories\MasterRepository.cs" />
-    <Compile Include="DAL\Repositories\OrderOnCableTVRepository.cs" />
-    <Compile Include="DAL\Repositories\OrderRepairAndRestructionRepository.cs" />
     <Compile Include="ViewModel\AuthorizationWindowViewModel.cs" />
     <Compile Include="View\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
@@ -142,7 +150,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="BLL\BusinessModels\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\properties.png" />
   </ItemGroup>

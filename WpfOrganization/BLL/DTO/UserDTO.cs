@@ -1,16 +1,11 @@
-﻿using System.Collections.Generic;
-using WpfOrganization.BLL.DTO;
-
-namespace WpfOrganization.DAL.Entities
+﻿namespace WpfOrganization.BLL.DTO
 {
-    public class User
+    public class UserDTO
     {
         public int Id { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
         public bool LoggedIn { get; set; }
         public AdminRole AdminRole { get; set; }
-
-        public virtual  ICollection<UserAction> UserActionHistory { get; set; }
     }
 }

@@ -5,14 +5,23 @@ using WpfOrganization.DAL.Interfaces;
 
 namespace WpfOrganization.DAL.Repositories
 {
-    public class EFUnitOfWork : IUnitOfWork
+    public class EFUnitOfWork : IUnitOfWork, IDisposable
     {
         private DatabaseContext _db;
         
-        private IRepository<Master> _masters;
-        private IRepository<CableTVProblem> _cableTVProblems;
-        private IRepository<OrderOnCableTV> _orderOnCableTV;
-        private IRepository<OrderRepairAndRestruction> _orderRepairAndRestruction;
+        private IGenericRepository<Master> _masters;
+        private IGenericRepository<CableTVProblem> _cableTVProblems;
+        private IGenericRepository<OrderOnCableTV> _orderOnCableTV;
+        private IGenericRepository<OrderRepairAndRestruction> _orderRepairAndRestruction;
+
+        private IGenericRepository<City> _cities;
+        private IGenericRepository<Street> _streets;
+        private IGenericRepository<StreetType> _streetTypes;
+        private IGenericRepository<Subscriber> _subscribers;
+        private IGenericRepository<RelationshipType> _relationshipTypes;
+        private IGenericRepository<SubscriberRelationship> _subscriberrelationships;
+        private IGenericRepository<User> _user;
+        private IGenericRepository<UserAction> _userActionHistory;
 
         private bool _disposed;
 
@@ -21,41 +30,74 @@ namespace WpfOrganization.DAL.Repositories
             _db = new DatabaseContext(connectionString);
         }
 
-        public IRepository<Master> Masters { get => _masters ?? (_masters = new MasterRepository(_db)); }
-
-        public IRepository<CableTVProblem> CableTVProblems
+        public IGenericRepository<Master> Masters
         {
-            get => _cableTVProblems ?? (_cableTVProblems = new CableTVProblemRepository(_db));
-        }
-        
-        public IRepository<OrderOnCableTV> OrdersOnCableTV { get => _orderOnCableTV ?? (_orderOnCableTV = new OrderOnCableTVRepository(_db)); }
-
-        public IRepository<OrderRepairAndRestruction> OrdersRepairAndRestruction
-        {
-            get => _orderRepairAndRestruction ?? (_orderRepairAndRestruction = new OrderRepairAndRestructionRepository(_db));
+            get => _masters ?? (_masters = new GenericRepository<Master>(_db, _db.Masters));
         }
 
-        public IRepository<City> Cities => throw new NotImplementedException();
+        public IGenericRepository<CableTVProblem> CableTVProblems
+        {
+            get => _cableTVProblems ??
+                   (_cableTVProblems = new GenericRepository<CableTVProblem>(_db, _db.CableTvProblems));
+        }
 
-        public IRepository<Street> Streets => throw new NotImplementedException();
+        public IGenericRepository<OrderOnCableTV> OrdersOnCableTV
+        {
+            get => _orderOnCableTV ??
+                   (_orderOnCableTV = new GenericRepository<OrderOnCableTV>(_db, _db.OrdersOnCableTv));
+        }
 
-        public IRepository<StreetType> StreetTypes => throw new NotImplementedException();
+        public IGenericRepository<OrderRepairAndRestruction> OrdersRepairAndRestruction
+        {
+            get => _orderRepairAndRestruction ?? (_orderRepairAndRestruction = new GenericRepository<OrderRepairAndRestruction>(_db, _db.OrdersRepairAndRestruction));
+        }
 
-        public IRepository<Subscriber> Subscribers => throw new NotImplementedException();
+        public IGenericRepository<City> Cities
+        {
+            get => _cities ?? (_cities = new GenericRepository<City>(_db, _db.Cities));
+        }
 
-        public IRepository<RelationshipType> RelationshipTypes => throw new NotImplementedException();
+        public IGenericRepository<Street> Streets
+        {
+            get => _streets ?? (_streets = new GenericRepository<Street>(_db, _db.Streets));
+        }
 
-        public IRepository<SubscriberRelationship> SubscriberRelationships => throw new NotImplementedException();
+        public IGenericRepository<StreetType> StreetTypes
+        {
+            get => _streetTypes ?? (_streetTypes = new GenericRepository<StreetType>(_db, _db.StreetTypes));
+        }
 
-        public IRepository<User> Users => throw new NotImplementedException();
+        public IGenericRepository<Subscriber> Subscribers
+        {
+            get => _subscribers ?? (_subscribers = new GenericRepository<Subscriber>(_db, _db.Subscribers));
+        }
 
-        public IRepository<UserAction> UserActionHistory => throw new NotImplementedException();
+        public IGenericRepository<RelationshipType> RelationshipTypes
+        {
+            get => _relationshipTypes ??
+                   (_relationshipTypes = new GenericRepository<RelationshipType>(_db, _db.RelationshipTypes));
+        }
+
+        public IGenericRepository<SubscriberRelationship> SubscriberRelationships
+        {
+            get => _subscriberrelationships ?? (_subscriberrelationships =
+                       new GenericRepository<SubscriberRelationship>(_db, _db.SubscriberRelationships));
+        }
+
+        public IGenericRepository<User> Users
+        {
+            get => _user ?? (_user = new GenericRepository<User>(_db, _db.Users));
+        }
+
+        public IGenericRepository<UserAction> UserActionHistory
+        {
+            get => _userActionHistory ?? (_userActionHistory = new GenericRepository<UserAction>(_db, _db.UserActions));
+        }
 
         public void Save()
         {
             _db.SaveChanges();
         }
-
 
         public virtual void Dispose(bool dicposing)
         {
