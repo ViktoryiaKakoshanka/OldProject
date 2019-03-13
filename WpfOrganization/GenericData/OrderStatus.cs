@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace WpfOrganization.BLL.DTO
+﻿namespace WpfOrganization.GenericData
 {
     public enum OrderStatus : byte
     {

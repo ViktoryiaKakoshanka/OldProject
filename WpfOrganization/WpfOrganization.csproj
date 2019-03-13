@@ -71,6 +71,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GenericData\OrderStatus.cs" />
+    <Compile Include="ViewModel\OrderOnCableTVViewModel.cs" />
+    <Compile Include="View\OrderOnCableTV.xaml.cs">
+      <DependentUpon>OrderOnCableTV.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\AuthorizationWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,7 +91,6 @@
     <Compile Include="BLL\DTO\MasterDTO.cs" />
     <Compile Include="BLL\DTO\OrderOnCableTVDTO.cs" />
     <Compile Include="BLL\DTO\OrderRepairAndRestructionDTO.cs" />
-    <Compile Include="BLL\DTO\OrderStatus.cs" />
     <Compile Include="BLL\DTO\RelationshipTypeDTO.cs" />
     <Compile Include="BLL\DTO\StreetTypeDTO.cs" />
     <Compile Include="BLL\DTO\SubscriberDTO.cs" />
@@ -122,6 +126,10 @@
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\OrderOnCableTV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

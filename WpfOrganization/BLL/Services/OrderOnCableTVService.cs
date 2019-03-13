@@ -5,6 +5,7 @@ using WpfOrganization.BLL.DTO;
 using WpfOrganization.BLL.Interfaces;
 using WpfOrganization.DAL.Entities;
 using WpfOrganization.DAL.Interfaces;
+using WpfOrganization.GenericData;
 using Exception = WpfOrganization.BLL.Infrastructure;
 
 namespace WpfOrganization.BLL.Services
@@ -98,6 +99,31 @@ namespace WpfOrganization.BLL.Services
         {
             var mapper = new MapperConfiguration(config => config.CreateMap<Master, MasterDTO>()).CreateMapper();
             return mapper.Map<IEnumerable<Master>, IEnumerable<MasterDTO>>(Database.Masters.GetAll());
+        }
+
+        public SubscriberDTO GetSubscriber(int idSubscriber)
+        {
+            var subscriber = Database.Subscribers.FindById(idSubscriber);
+            if (subscriber == null)
+            {
+                throw new Exception.ValidationException("Subscriber not found.", string.Empty);
+            }
+            return new SubscriberDTO()
+            {
+                NumberOfContract = subscriber.NumberOfContract,
+                RelationshipTypeId = subscriber.RelationshipType.Id,
+                ApartmentNumber = subscriber.Address.ApartmentNumber,
+                CityId = subscriber.CityId
+
+            };
+        }
+
+        public IEnumerable<SubscriberDTO> Subscribers()
+        {
+            var mapper = new MapperConfiguration(config => config.CreateMap<Subscriber, SubscriberDTO>()).CreateMapper();
+
+            var subscriber = Database.Subscribers.GetAll();
+            return mapper.Map<IEnumerable<Subscriber>, IEnumerable<SubscriberDTO>>(subscriber);
         }
 
         public void Dispose()

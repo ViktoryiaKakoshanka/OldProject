@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using WpfOrganization.BLL.DTO;
+using WpfOrganization.GenericData;
 
 namespace WpfOrganization.DAL.Entities
 {
