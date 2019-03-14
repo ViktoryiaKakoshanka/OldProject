@@ -5,8 +5,77 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfOrganization.View"
         mc:Ignorable="d"
-        Title="Orders" Height="450" Width="800">
-    <Grid>
+        Title="Orders" Height="493.902" Width="800">
+    <Grid Margin="0,0,0,-3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="236*"/>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="191*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
         
+        
+        <GroupBox Header="Фильтр" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Height="200" Margin="492,25,0,0" VerticalAlignment="Top" Width="290">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal">
+                    <TextBlock Height="20" Width="80">Город</TextBlock>
+                    <ComboBox Height="20" Width="181" Margin="17,0,0,0"></ComboBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal">
+                    <TextBlock Height="20" Width="80">Улица</TextBlock>
+                    <ComboBox Height="20" Width="181" Margin="17,0,0,0"></ComboBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal">
+                    <TextBlock Height="20" Width="30">Дом</TextBlock>
+                    <CheckBox Height="20" ></CheckBox>
+                    <TextBox Height="20" Width="65" Margin="51,0,0,0"></TextBox>
+                    <TextBlock Height="20" Width="25" Margin="25,0,0,0">кв.</TextBlock>
+                    <TextBox Width="65" Height="20"></TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal">
+                    <TextBlock Height="20" Width="80">Фамилия</TextBlock>
+                    <TextBox Height="20" Width="181" Margin="17,0,0,0"></TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal">
+                    <TextBlock Height="20" Width="80">Номер договора</TextBlock>
+                    <TextBox Height="20" Width="181" Margin="17,0,0,0"></TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal">
+                    <Button Height="20" Width="180" Margin="50,0,50,0" >Показать все заниси</Button>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Абоненты" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Height="200" Margin="10,25,0,0" VerticalAlignment="Top" Width="477">
+            <Grid HorizontalAlignment="Left" Height="170" Margin="0,10,-2,-2" VerticalAlignment="Top" Width="467" Background="#FFE6E6E6"/>
+        </GroupBox>
+
+        <GroupBox Header="Нераспределенные заявки" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="167" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="772">
+            <Grid HorizontalAlignment="Left" Height="135" Margin="0,10,-2,0" VerticalAlignment="Top" Width="762" Background="#FFE6E6E6"/>
+        </GroupBox>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal">
+            <Button Height="20" Width="80">Улица</Button>
+            <Button Height="20" Width="181" Margin="17,0,0,0"></Button>
+        </StackPanel>
+
     </Grid>
 </Window>
