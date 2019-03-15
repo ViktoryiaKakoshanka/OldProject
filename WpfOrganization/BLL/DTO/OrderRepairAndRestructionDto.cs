@@ -1,4 +1,5 @@
 ﻿using System;
+using WpfOrganization.GenericData;
 
 namespace WpfOrganization.BLL.DTO
 {

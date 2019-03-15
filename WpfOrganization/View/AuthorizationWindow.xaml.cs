@@ -3,6 +3,7 @@ using System.Windows;
 using WpfOrganization.BLL.DTO;
 using WpfOrganization.DAL.EF;
 using WpfOrganization.DAL.Entities;
+using WpfOrganization.GenericData;
 
 namespace WpfOrganization
 {

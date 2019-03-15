@@ -71,6 +71,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BLL\Interfaces\ICityService.cs" />
+    <Compile Include="BLL\Interfaces\ISubscriberService.cs" />
+    <Compile Include="BLL\Services\SubscriberService.cs" />
+    <Compile Include="DAL\Repositories\SubscriberRepository.cs" />
     <Compile Include="GenericData\OrderStatus.cs" />
     <Compile Include="ViewModel\OrderOnCableTVViewModel.cs" />
     <Compile Include="View\OrderOnCableTV.xaml.cs">

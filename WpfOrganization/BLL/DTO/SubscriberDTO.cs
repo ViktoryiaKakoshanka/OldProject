@@ -18,10 +18,13 @@ namespace WpfOrganization.BLL.DTO
         public string SecondMobilePhone { get; set; }
 
         public int? RelationshipTypeId { get; set; }
+        public RelationshipTypeDTO RelationshipType { get; set; }
 
         public int? CityId { get; set; }
+        public CityDTO City { get; set; }
 
         public int? StreetId { get; set; }
+        public StreetDTO Street { get; set; }
 
         public string StreetNumber { get; set; }
         public string HouseNumber { get; set; }

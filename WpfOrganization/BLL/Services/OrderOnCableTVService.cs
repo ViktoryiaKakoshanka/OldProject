@@ -43,7 +43,7 @@ namespace WpfOrganization.BLL.Services
                 CableTVProblemId = orderDTO.CableTVProblemId,
                 CreationDate = DateTime.Now,
                 EstimatedCompletionDate = orderDTO.EstimatedCompletionDate,
-                IsCollectiveRequest = orderDTO.IsCollectiveRequest,
+                IsCollectiveOrder = orderDTO.IsCollectiveOrder,
                 NonStandardProblem = orderDTO.NonStandardProblem,
                 OrderStatus = OrderStatus.Created,
                 PhoneNumber = orderDTO.PhoneNumber,
@@ -118,7 +118,7 @@ namespace WpfOrganization.BLL.Services
             };
         }
 
-        public IEnumerable<SubscriberDTO> Subscribers()
+        public IEnumerable<SubscriberDTO> GetSubscribers()
         {
             var mapper = new MapperConfiguration(config => config.CreateMap<Subscriber, SubscriberDTO>()).CreateMapper();
 

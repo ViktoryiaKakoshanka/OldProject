@@ -14,7 +14,6 @@ namespace WpfOrganization.BLL.Interfaces
         IEnumerable<CableTVProblemDTO> GetCableTVProblems();
 
         SubscriberDTO GetSubscriber(int idSubscriber);
-        IEnumerable<SubscriberDTO> Subscribers();
 
         void Dispose();
     }

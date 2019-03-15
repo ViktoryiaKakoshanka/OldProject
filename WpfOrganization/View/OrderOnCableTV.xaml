@@ -4,21 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfOrganization.View"
+        xmlns:ViewModel="clr-namespace:WpfOrganization.ViewModel"
         mc:Ignorable="d"
-        Title="Orders" Height="493.902" Width="800">
+        Title="Заказы" Height="525.521" Width="1019.225">
+    <Window.DataContext>
+        <ViewModel:OrderOnCableTVViewModel/>
+    </Window.DataContext>
     <Grid Margin="0,0,0,-3">
         <Grid.RowDefinitions>
             <RowDefinition Height="236*"/>
-            <RowDefinition Height="39*"/>
+            <RowDefinition Height="39"/>
             <RowDefinition Height="191*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="301"/>
         </Grid.ColumnDefinitions>
-        
-        
-        <GroupBox Header="Фильтр" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Height="200" Margin="492,25,0,0" VerticalAlignment="Top" Width="290">
+
+
+        <GroupBox Header="Фильтр" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Height="200" Margin="0,25,0,0" VerticalAlignment="Top" Width="290">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="10"></RowDefinition>
@@ -64,18 +68,48 @@
                 </StackPanel>
             </Grid>
         </GroupBox>
-        <GroupBox Header="Абоненты" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Height="200" Margin="10,25,0,0" VerticalAlignment="Top" Width="477">
-            <Grid HorizontalAlignment="Left" Height="170" Margin="0,10,-2,-2" VerticalAlignment="Top" Width="467" Background="#FFE6E6E6"/>
+        <GroupBox Header="Абоненты" 
+                  Grid.Column="0" 
+                  Grid.Row="0" 
+                  HorizontalAlignment="Stretch" 
+                  Margin="10,25,0,0" 
+                  VerticalAlignment="Stretch" 
+                  MinWidth="477">
+            <DataGrid HorizontalAlignment="Stretch" 
+                      Margin="5,5,5,5" 
+                      VerticalAlignment="Stretch" 
+                      MinWidth="467" 
+                      Background="#FFE6E6E6"
+                      ItemsSource="{Binding Subscribers}"
+                      HeadersVisibility="Column"
+                      ColumnWidth="auto"
+                      CanUserAddRows="False">
+            </DataGrid>
         </GroupBox>
 
-        <GroupBox Header="Нераспределенные заявки" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="167" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="772">
-            <Grid HorizontalAlignment="Left" Height="135" Margin="0,10,-2,0" VerticalAlignment="Top" Width="762" Background="#FFE6E6E6"/>
-        </GroupBox>
-
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal">
-            <Button Height="20" Width="80">Улица</Button>
-            <Button Height="20" Width="181" Margin="17,0,0,0"></Button>
+        <StackPanel Grid.Row="1" 
+                    Grid.Column="0" 
+                    Grid.ColumnSpan="2" 
+                    Orientation="Horizontal">
+            <Button Height="20" Width="180" Margin="17,0,0,0">Подать заявку</Button>
+            <Button Height="20" Width="180" Margin="17,0,0,0">Подключить</Button>
         </StackPanel>
+        
+        <GroupBox Header="Нераспределенные заявки" 
+                  Grid.Column="0" 
+                  Grid.Row="2" 
+                  Grid.ColumnSpan="2" 
+                  HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Stretch" 
+                  Margin="10,10,10,10" 
+                  MinWidth="772">
+            <DataGrid HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Stretch" 
+                      Margin="2,2,2,2" 
+                      MinWidth="762" 
+                      Background="#FFE6E6E6" 
+                      ItemsSource="{Binding OrdersOnCableTV}"/>
+        </GroupBox>
 
     </Grid>
 </Window>
