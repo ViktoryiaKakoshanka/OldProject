@@ -12,6 +12,14 @@ namespace WpfOrganization.BLL.Services
     {
         private IUnitOfWork Database { get; set; }
 
+        public ViewModel.OrderOnCableTVViewModel OrderOnCableTVViewModel
+        {
+            get => default(ViewModel.OrderOnCableTVViewModel);
+            set
+            {
+            }
+        }
+
         public SubscriberService(IUnitOfWork database)
         {
             Database = database;

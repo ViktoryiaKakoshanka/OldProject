@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using WpfOrganization.BLL.DTO;
 using WpfOrganization.BLL.Interfaces;
 using WpfOrganization.BLL.Services;
@@ -11,35 +10,38 @@ namespace WpfOrganization.ViewModel
 {
     public class OrderOnCableTVViewModel
     {
-        public IList<Subscriber> Subscribers { get; private set; }
+        public IList<SubscriberUI> Subscribers { get; private set; }
         public IList<OrderOnCableTV> OrdersOnCableTV { get; private set; }
         public IList<City> Cities { get; private set; }
 
         private static IUnitOfWork unitOfWork = new EFUnitOfWork(@"Data Source=.\SQLEXPRESS;Initial Catalog=CableTV;Integrated Security=True");
-        IOrderService _orderService;
-        ISubscriberService _subscriberService;
+        private readonly IOrderService _orderService;
+        private ISubscriberService _subscriberService;
+        private ICityService _cityService;
 
-        public OrderOnCableTVViewModel() : this(new OrderOnCableTVService(unitOfWork), new SubscriberService(unitOfWork))
+        public OrderOnCableTVViewModel() : this(new OrderOnCableTVService(unitOfWork), new SubscriberService(unitOfWork), new CityService(unitOfWork))
         {
         }
 
-        public OrderOnCableTVViewModel(IOrderService orderService, ISubscriberService subscriberService)
+        public OrderOnCableTVViewModel(IOrderService orderService, ISubscriberService subscriberService, ICityService cityService)
         {
             _orderService = orderService ?? throw new ArgumentNullException(nameof(orderService));
             _subscriberService = subscriberService ?? throw new ArgumentNullException(nameof(subscriberService));
+            _cityService = cityService ?? throw new ArgumentNullException(nameof(cityService));
 
-            Subscribers = new List<Subscriber>();
+            Subscribers = new List<SubscriberUI>();
             OrdersOnCableTV = new List<OrderOnCableTV>();
             Cities = new List<City>();
 
             FillSubscribers(_subscriberService.GetSubscribers());
+            FillCities(_cityService.GetCities());
         }
 
         void FillSubscribers(IEnumerable<SubscriberDTO> subscribersDTO)
         {
             foreach (var item in subscribersDTO)
             {
-                Subscribers.Add(new Subscriber(item));
+                Subscribers.Add(new SubscriberUI(item));
             }
         }
 
@@ -55,13 +57,14 @@ namespace WpfOrganization.ViewModel
         {
             foreach (var item in citiesDTO)
             {
-                Cities.Add(new City());
+                Cities.Add(new City(item));
             }
         }
     }
 
-    public class Subscriber
+    public class SubscriberUI
     {
+        public int Id { get; set; }
         public int NumberOfContract { get; }
         public string Relationship { get; }
         public string Surname { get; }
@@ -72,9 +75,17 @@ namespace WpfOrganization.ViewModel
         public string HouseNumber { get; set; }
         public string ApartmentNumber { get; set; }
 
-
-        public Subscriber(SubscriberDTO subscriberDTO)
+        public SubscriberDTO SubscriberDTO
         {
+            get => default(SubscriberDTO);
+            set
+            {
+            }
+        }
+
+        public SubscriberUI(SubscriberDTO subscriberDTO)
+        {
+            Id = subscriberDTO.Id;
             NumberOfContract = subscriberDTO.NumberOfContract;
             Relationship = subscriberDTO.RelationshipType.ToString();
             Surname = subscriberDTO.Surname;
@@ -117,6 +128,13 @@ namespace WpfOrganization.ViewModel
 
     public class City
     {
-        
+        public int Id { get; set; }
+        public string CityName { get; set; }
+
+        public City(CityDTO cityDTO)
+        {
+            Id = cityDTO.Id;
+            CityName = string.Join(" ", cityDTO.ShortNameOfCityType, cityDTO.CityName);
+    }
     }
 }

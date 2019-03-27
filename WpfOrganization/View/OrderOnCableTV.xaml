@@ -37,7 +37,7 @@
 
                 <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal">
                     <TextBlock Height="20" Width="80">Город</TextBlock>
-                    <ComboBox Height="20" Width="181" Margin="17,0,0,0"></ComboBox>
+                    <ComboBox Height="20" Width="181" Margin="17,0,0,0" ItemsSource="{Binding Cities}" DisplayMemberPath="CityName" SelectedValuePath="Id"></ComboBox>
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal">

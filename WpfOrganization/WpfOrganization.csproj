@@ -74,6 +74,7 @@
     <Compile Include="BLL\Entities\Subscriber.cs" />
     <Compile Include="BLL\Interfaces\ICityService.cs" />
     <Compile Include="BLL\Interfaces\ISubscriberService.cs" />
+    <Compile Include="BLL\Services\CityService.cs" />
     <Compile Include="BLL\Services\SubscriberService.cs" />
     <Compile Include="DAL\Repositories\SubscriberRepository.cs" />
     <Compile Include="GenericData\OrderStatus.cs" />
@@ -153,6 +154,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

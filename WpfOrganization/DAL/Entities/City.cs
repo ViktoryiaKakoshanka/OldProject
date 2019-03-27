@@ -12,14 +12,11 @@ namespace WpfOrganization.DAL.Entities
 
         public virtual ICollection<Street> Streets { get; set; }
         public virtual ICollection<Master> Masters { get; set; }
-        public virtual ICollection<Subscriber> Subscribers { get; set; }
-        public virtual ICollection<OrderRepairAndRestruction> OrdersRepairAndRestruction { get; set; }
 
         public City()
         {
             Streets = new List<Street>();
             Masters = new List<Master>();
-            Subscribers = new List<Subscriber>();/**/
         }
     }
 }

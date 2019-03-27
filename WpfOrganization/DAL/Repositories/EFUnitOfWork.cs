@@ -80,6 +80,14 @@ namespace WpfOrganization.DAL.Repositories
             get => _userActionHistory ?? (_userActionHistory = new GenericRepository<UserAction>(_db, _db.UserActions));
         }
 
+        public ViewModel.OrderOnCableTVViewModel OrderOnCableTVViewModel
+        {
+            get => default(ViewModel.OrderOnCableTVViewModel);
+            set
+            {
+            }
+        }
+
         public void Save()
         {
             _db.SaveChanges();

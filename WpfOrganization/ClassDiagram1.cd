@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WpfOrganization.App" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\AuthorizationWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WpfOrganization.BLL.DTO.CableTVProblemDTO" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BLL\DTO\CableTVProblemDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.BLL.DTO.CityDTO" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAgIAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BLL\DTO\CityDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.BLL.DTO.MasterDTO" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAAKAAAAAAAKAAAAAQABABAAEAAAAAAAAAAQAA=</HashCode>
+      <FileName>BLL\DTO\MasterDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.BLL.DTO.OrderOnCableTVDTO" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAGAAIEQQAAAgCAACAAQAAAAAAAEAAAAACAAAABAQg=</HashCode>
+      <FileName>BLL\DTO\OrderOnCableTVDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.BLL.DTO.OrderRepairAndRestructionDTO" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAAIFAAQAAkAAAAIIQQgAAEAAAAAAAAEAAAAAAQA=</HashCode>
+      <FileName>BLL\DTO\OrderRepairAndRestructionDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.BLL.DTO.RelationshipTypeDTO" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>BLL\DTO\RelationshipTypeDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.BLL.DTO.StreetDTO" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAABAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BLL\DTO\StreetDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.BLL.DTO.StreetTypeDTO" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAgAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BLL\DTO\StreetTypeDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.BLL.DTO.SubscriberDTO" Collapsed="true">
+    <Position X="9" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACABJAQAAEAICAAAAAQABEAAAEAAAAMAAAAAAAA=</HashCode>
+      <FileName>BLL\DTO\SubscriberDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.BLL.DTO.SubscriberRelationshipDTO" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAAAAAAAIQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BLL\DTO\SubscriberRelationshipDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.BLL.DTO.UserActionDTO">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BLL\DTO\UserActionDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.BLL.DTO.UserDTO" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAAAAAAAAABAAAAAAAAAAAAACAAAQAAAAAAA=</HashCode>
+      <FileName>BLL\DTO\UserDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.BLL.Entities.Subscriber" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACABJAQAAEAACAAIAAQABEAAAEAAAAEAAAAAAAA=</HashCode>
+      <FileName>BLL\Entities\Subscriber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.BLL.Infrastructure.ServiceModule" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>BLL\Infrastructure\ServiceModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.BLL.Infrastructure.ValidationException" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>BLL\Infrastructure\ValidationException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.BLL.Services.CityService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGAAAQAIAAAAAAAAAAAAAAIAEAAAAAAAAAA=</HashCode>
+      <FileName>BLL\Services\CityService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OrderOnCableTVViewModel" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WpfOrganization.BLL.Services.OrderOnCableTVService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="13.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGAAAQAAEAAAABAAAAAAAAAACIAAAACAAAE=</HashCode>
+      <FileName>BLL\Services\OrderOnCableTVService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OrderOnCableTVViewModel" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WpfOrganization.BLL.Services.SubscriberService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="12.5" Width="1.5" />
+    <AssociationLine Name="OrderOnCableTVViewModel" Type="WpfOrganization.ViewModel.OrderOnCableTVViewModel">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.732" Y="0.443" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AACAAACAAGAAAQAIAAAAABAAAAAAAAAAEAAAAAAAABA=</HashCode>
+      <FileName>BLL\Services\SubscriberService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OrderOnCableTVViewModel" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WpfOrganization.DAL.EF.DatabaseContext" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAACAQAAAAAAAQAAAAAAAQIAIAAAAAAAAAAUACAAA=</HashCode>
+      <FileName>DAL\EF\DatabaseContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.DAL.EF.DbInitializer" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\EF\DbInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.DAL.Entities.CableTVProblem" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Entities\CableTVProblem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.DAL.Entities.City" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAgIAAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Entities\City.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.DAL.Entities.FullName" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Entities\FullName.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.DAL.Entities.Master" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACACAAKAAAAAAAKAAAAAQAJABAAEAAAAAAAAgAQAA=</HashCode>
+      <FileName>DAL\Entities\Master.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.DAL.Entities.OrderOnCableTV" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAGAAIAQQACAgCAACAAQAAAAAAAEAAAAACAAAABAQg=</HashCode>
+      <FileName>DAL\Entities\OrderOnCableTV.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.DAL.Entities.OrderRepairAndRestruction" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQADAAIFAAQAIkAIQAIAQQgAAEAAAAAAAAMAAAAAAQA=</HashCode>
+      <FileName>DAL\Entities\OrderRepairAndRestruction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.DAL.Entities.Street" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAABAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Entities\Street.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.DAL.Entities.Subscriber" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACACABJAQAAEAICAAAAAQABEAAAEAAAAMAAAgAAAA=</HashCode>
+      <FileName>DAL\Entities\Subscriber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.DAL.Entities.SubscriberRelationship" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAARAAAAAAAACQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Entities\SubscriberRelationship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.DAL.Entities.User">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAAAAAAAAABAAAAAAAAABAAACAAAQAAAAAAA=</HashCode>
+      <FileName>DAL\Entities\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.DAL.Entities.UserAction">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAgAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Entities\UserAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.DAL.Repositories.EFUnitOfWork" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="11.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EBAAgKAAACEEAQAUAAAAAADQIAABgIAEAAAAEWACAAA=</HashCode>
+      <FileName>DAL\Repositories\EFUnitOfWork.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OrderOnCableTVViewModel" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.19" />
+  </Class>
+  <Class Name="WpfOrganization.DAL.Repositories.GenericRepository&lt;TEntity&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAABABAAAAAIAAAAAEBAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>DAL\Repositories\GenericRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WpfOrganization.DAL.Repositories.SubscriberRepository" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Repositories\SubscriberRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.Properties.Resources" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.Properties.Settings" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.View.Orders" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\OrderOnCableTV.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WpfOrganization.ViewModel.AuthorizationWindowViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAQIAAAAAA=</HashCode>
+      <FileName>ViewModel\AuthorizationWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WpfOrganization.ViewModel.OrderOnCableTVViewModel" Collapsed="true">
+    <Position X="6.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAEAAAAAAAABACAIAAAAAAAAGEIAQAAAAA=</HashCode>
+      <FileName>ViewModel\OrderOnCableTVViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.ViewModel.SubscriberUI" Collapsed="true">
+    <Position X="9" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACACAAAAQAAAAIAAAAAAQABEAAAAAAAAIBAAAAAAA=</HashCode>
+      <FileName>ViewModel\OrderOnCableTVViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SubscriberDTO" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WpfOrganization.ViewModel.OrderOnCableTV" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACJIAQQAAgAAAAAAQAgAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>ViewModel\OrderOnCableTVViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfOrganization.ViewModel.City" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\OrderOnCableTVViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="WpfOrganization.BLL.DTO.AdminRole" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BLL\DTO\AdminRole.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WpfOrganization.GenericData.OrderStatus" Collapsed="true">
+    <Position X="2.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAKAAAAAAAAAAAAAAAQEAAAAAAAAAAA=</HashCode>
+      <FileName>GenericData\OrderStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WpfOrganization.GenericData.RelationshipType" Collapsed="true">
+    <Position X="2.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GenericData\RelationshipType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WpfOrganization.GenericData.StreetType" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>GenericData\StreetType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

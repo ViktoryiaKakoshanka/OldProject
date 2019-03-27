@@ -9,6 +9,6 @@ namespace WpfOrganization.BLL.DTO
         public string CityName { get; set; }
 
         public virtual ICollection<StreetDTO> Streets { get; set; }
-        public virtual ICollection<SubscriberDTO> Subscribers { get; set; }
+        //public virtual ICollection<SubscriberDTO> Subscribers { get; set; }
     }
 }
