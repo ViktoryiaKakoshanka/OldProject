@@ -13,10 +13,8 @@ namespace WpfOrganization.DAL.EF
 
         public DbSet<City> Cities { get; set; }
         public DbSet<Street> Streets { get; set; }
-        public DbSet<StreetType> StreetTypes { get; set; }
 
         public DbSet<Subscriber> Subscribers { get; set; }
-        public DbSet<RelationshipType> RelationshipTypes { get; set; }
         public DbSet<SubscriberRelationship> SubscriberRelationships { get; set; }
 
         public DbSet<User> Users { get; set; }

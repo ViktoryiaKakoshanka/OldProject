@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using WpfOrganization.GenericData;
 
 namespace WpfOrganization.DAL.Entities
 {
@@ -8,7 +9,6 @@ namespace WpfOrganization.DAL.Entities
         public int Id { get; set; }
         public string StreetName { get; set; }
 
-        public int? StreetTypesId { get; set; }
         public StreetType StreetTypes { get; set; }
     }
 }

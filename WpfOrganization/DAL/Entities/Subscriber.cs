@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
+using WpfOrganization.GenericData;
 
 namespace WpfOrganization.DAL.Entities
 {
@@ -13,13 +13,14 @@ namespace WpfOrganization.DAL.Entities
         public int NumberOfContract { get; set; }
         public DateTime ContractDate { get; set; }
 
-        public FullName FullName { get; set; }
+        public string Surname { get; set; }
+        public string Name { get; set; }
+        public string Patronymic { get; set; }
 
         public string HomePhone { get; set; }
         public string MobilePhone { get; set; }
         public string SecondMobilePhone { get; set; }
 
-        public int? RelationshipTypeId { get; set; }
         public virtual RelationshipType RelationshipType { get; set; }
 
         public int? CityId { get; set; }
@@ -28,8 +29,10 @@ namespace WpfOrganization.DAL.Entities
         public int? StreetId { get; set; }
         public virtual Street Street { get; set; }
 
-        public virtual Address Address { get; set; }
+        public string HouseNumber { get; set; }
+        public string ApartmentNumber { get; set; }
 
         public virtual ICollection<SubscriberRelationship> RelationshipHistory { get; set; }
+        public virtual ICollection<OrderOnCableTV> OrderHistory { get; set; }
     }
 }

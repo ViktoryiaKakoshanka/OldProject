@@ -13,14 +13,12 @@ namespace WpfOrganization.BLL.Services
     public class OrderOnCableTVService : IOrderService
     {
         private IUnitOfWork Database { get; set; }
-        private bool _disposed;
 
         public OrderOnCableTVService(IUnitOfWork database)
         {
             Database = database;
         }
-
-
+        
         public void MakeOrder(OrderOnCableTVDTO orderDTO)
         {
             var master = Database.Masters.FindById(orderDTO.MasterId);
@@ -81,15 +79,15 @@ namespace WpfOrganization.BLL.Services
 
             return new MasterDTO()
             {
-                Name = master.FullName.Name,
+                Name = master.Name,
                 Brigade = master.Brigade,
                 HomePhone = master.HomePhone,
                 MobilePhone = master.MobilePhone,
-                Patronymic = master.FullName.Patronymic,
+                Patronymic = master.Patronymic,
                 SecondHomePhone = master.SecondHomePhone,
                 SecondMobilePhone = master.SecondMobilePhone,
                 SecondWorkPhone = master.SecondWorkPhone,
-                Surname = master.FullName.Surname,
+                Surname = master.Surname,
                 WorkPhone = master.WorkPhone,
                 Id = master.Id
             };
@@ -111,8 +109,8 @@ namespace WpfOrganization.BLL.Services
             return new SubscriberDTO()
             {
                 NumberOfContract = subscriber.NumberOfContract,
-                RelationshipTypeId = subscriber.RelationshipType.Id,
-                ApartmentNumber = subscriber.Address.ApartmentNumber,
+                RelationshipType = subscriber.RelationshipType,
+                ApartmentNumber = subscriber.ApartmentNumber,
                 CityId = subscriber.CityId
 
             };

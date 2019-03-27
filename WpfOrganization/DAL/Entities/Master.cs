@@ -8,7 +8,9 @@ namespace WpfOrganization.DAL.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public FullName FullName { get; set; }
+        public string Surname { get; set; }
+        public string Name { get; set; }
+        public string Patronymic { get; set; }
 
         public string WorkPhone { get; set; }
         public string SecondWorkPhone { get; set; }

@@ -13,12 +13,9 @@ namespace WpfOrganization.DAL.Repositories
         private IGenericRepository<CableTVProblem> _cableTVProblems;
         private IGenericRepository<OrderOnCableTV> _orderOnCableTV;
         private IGenericRepository<OrderRepairAndRestruction> _orderRepairAndRestruction;
-
         private IGenericRepository<City> _cities;
         private IGenericRepository<Street> _streets;
-        private IGenericRepository<StreetType> _streetTypes;
         private IGenericRepository<Subscriber> _subscribers;
-        private IGenericRepository<RelationshipType> _relationshipTypes;
         private IGenericRepository<SubscriberRelationship> _subscriberrelationships;
         private IGenericRepository<User> _user;
         private IGenericRepository<UserAction> _userActionHistory;
@@ -61,23 +58,12 @@ namespace WpfOrganization.DAL.Repositories
         {
             get => _streets ?? (_streets = new GenericRepository<Street>(_db, _db.Streets));
         }
-
-        public IGenericRepository<StreetType> StreetTypes
-        {
-            get => _streetTypes ?? (_streetTypes = new GenericRepository<StreetType>(_db, _db.StreetTypes));
-        }
-
+        
         public IGenericRepository<Subscriber> Subscribers
         {
             get => _subscribers ?? (_subscribers = new GenericRepository<Subscriber>(_db, _db.Subscribers));
         }
-
-        public IGenericRepository<RelationshipType> RelationshipTypes
-        {
-            get => _relationshipTypes ??
-                   (_relationshipTypes = new GenericRepository<RelationshipType>(_db, _db.RelationshipTypes));
-        }
-
+        
         public IGenericRepository<SubscriberRelationship> SubscriberRelationships
         {
             get => _subscriberrelationships ?? (_subscriberrelationships =

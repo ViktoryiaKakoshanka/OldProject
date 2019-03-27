@@ -20,12 +20,7 @@ namespace WpfOrganization
             {
                 var stud = new User() { Login = "Bill", Password = "", AdminRole = AdminRole.Dispatcher, LoggedIn = false};
                 ctx.Users.Add(stud);
-
-                var address = new Address()
-                {
-                    ApartmentNumber = "lo"
-                };
-
+                
                 var city = new City()
                 {
                     CityName = "Чашники",
@@ -33,34 +28,24 @@ namespace WpfOrganization
                 };
                 ctx.Cities.Add(city);
 
-                var streetTypes = new StreetType()
-                {
-                    ShortStreetTypeName = "ул.",
-                    FullStreetTypeName = "улица"
-                };
-                ctx.StreetTypes.Add(streetTypes);
 
                 var street = new Street()
                 {
                     StreetName = "Ленина",
-                    StreetTypes = streetTypes
+                    StreetTypes = StreetType.Street
                 };
                 ctx.Streets.Add(street);
 
-                var relationshipType = new RelationshipType()
-                {
-                    NameRelationship = "Подключен"
-                };
-                ctx.RelationshipTypes.Add(relationshipType);
                 ctx.SaveChanges();
 
                 var subscriber = new Subscriber()
                 {
-                    RelationshipType = relationshipType,
+                    RelationshipType = RelationshipType.StatePackage,
                     City = city,
                     Street = street,
-                    FullName = new FullName(),
-                    Address = new Address(),
+                    Surname = "T",
+                    Name = "T",
+                    Patronymic = "T",
                     ContractDate = DateTime.Now,
                     NumberOfContract = 2
                 };

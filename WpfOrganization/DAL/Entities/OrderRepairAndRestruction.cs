@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using WpfOrganization.GenericData;
 
 namespace WpfOrganization.DAL.Entities
 {
@@ -25,12 +26,13 @@ namespace WpfOrganization.DAL.Entities
         public int? StreetId { get; set; }
         public Street Street { get; set; }
 
-        public Address Address { get; set; }
+        public string HouseNumber { get; set; }
+        public string ApartmentNumber { get; set; }
 
         public string Problem { get; set; }
         public string Remark { get; set; }
 
-        public string OrderStatus { get; set; }
+        public OrderStatus Status { get; set; }
         public DateTime DateOfExecution { get; set; }
         public DateTime DateOfCallback { get; set; }
 

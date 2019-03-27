@@ -71,11 +71,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BLL\Entities\Subscriber.cs" />
     <Compile Include="BLL\Interfaces\ICityService.cs" />
     <Compile Include="BLL\Interfaces\ISubscriberService.cs" />
     <Compile Include="BLL\Services\SubscriberService.cs" />
     <Compile Include="DAL\Repositories\SubscriberRepository.cs" />
     <Compile Include="GenericData\OrderStatus.cs" />
+    <Compile Include="GenericData\RelationshipType.cs" />
+    <Compile Include="GenericData\StreetType.cs" />
     <Compile Include="ViewModel\OrderOnCableTVViewModel.cs" />
     <Compile Include="View\OrderOnCableTV.xaml.cs">
       <DependentUpon>OrderOnCableTV.xaml</DependentUpon>
@@ -107,17 +110,14 @@
     <Compile Include="BLL\Services\OrderOnCableTVService.cs" />
     <Compile Include="DAL\EF\DatabaseContext.cs" />
     <Compile Include="DAL\EF\DbInitializer.cs" />
-    <Compile Include="DAL\Entities\Address.cs" />
     <Compile Include="DAL\Entities\CableTVProblem.cs" />
     <Compile Include="DAL\Entities\City.cs" />
     <Compile Include="DAL\Entities\FullName.cs" />
     <Compile Include="DAL\Entities\OrderRepairAndRestruction.cs" />
     <Compile Include="DAL\Entities\Subscriber.cs" />
     <Compile Include="DAL\Entities\Master.cs" />
-    <Compile Include="DAL\Entities\RelationshipType.cs" />
     <Compile Include="DAL\Entities\OrderOnCableTV.cs" />
     <Compile Include="DAL\Entities\Street.cs" />
-    <Compile Include="DAL\Entities\StreetType.cs" />
     <Compile Include="DAL\Entities\User.cs" />
     <Compile Include="DAL\Entities\UserAction.cs" />
     <Compile Include="DAL\Entities\SubscriberRelationship.cs" />

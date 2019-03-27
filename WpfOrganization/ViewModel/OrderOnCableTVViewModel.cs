@@ -76,11 +76,11 @@ namespace WpfOrganization.ViewModel
         public Subscriber(SubscriberDTO subscriberDTO)
         {
             NumberOfContract = subscriberDTO.NumberOfContract;
-            Relationship = subscriberDTO.RelationshipType.NameRelationship;
+            Relationship = subscriberDTO.RelationshipType.ToString();
             Surname = subscriberDTO.Surname;
             Name = subscriberDTO.Name;
             Patronymic = subscriberDTO.Patronymic;
-            City = subscriberDTO.City.CityName;
+            City = subscriberDTO.City?.CityName;
             Street = subscriberDTO.Street.StreetName;
             HouseNumber = subscriberDTO.HouseNumber;
             ApartmentNumber = subscriberDTO.ApartmentNumber;

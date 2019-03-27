@@ -12,10 +12,8 @@ namespace WpfOrganization.DAL.Interfaces
 
         IGenericRepository<City> Cities { get; }
         IGenericRepository<Street> Streets { get; }
-        IGenericRepository<StreetType> StreetTypes { get; }
 
         IGenericRepository<Subscriber> Subscribers { get; }
-        IGenericRepository<RelationshipType> RelationshipTypes { get; }
         IGenericRepository<SubscriberRelationship> SubscriberRelationships { get; }
 
         IGenericRepository<User> Users { get; }

@@ -1,4 +1,5 @@
 ﻿using System;
+using WpfOrganization.GenericData;
 
 namespace WpfOrganization.DAL.Entities
 {
@@ -10,7 +11,6 @@ namespace WpfOrganization.DAL.Entities
         public int SubscriberId { get; set; }
         public Subscriber Subscriber { get; set; }
 
-        public int RelationshipTypeId { get; set; }
         public RelationshipType RelationshipType { get; set; }
     }
 }
