@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using WpfOrganization.GenericData;
 
-namespace WpfOrganization.BLL.Entities
+namespace WpfOrganization.BLL.DTO
 {
-    class Subscriber
+    public class SubscriberDTO
     {
         public int Id { get; set; }
 
@@ -19,21 +18,15 @@ namespace WpfOrganization.BLL.Entities
         public string MobilePhone { get; set; }
         public string SecondMobilePhone { get; set; }
 
-        public virtual RelationshipType RelationshipType { get; set; }
+        public RelationshipType RelationshipType { get; set; }
 
         public int? CityId { get; set; }
-        //public virtual City City { get; set; }
+        public CityDTO City { get; set; }
 
         public int? StreetId { get; set; }
-       // public virtual Street Street { get; set; }
+        public StreetDTO Street { get; set; }
 
-        public string StreetNumber { get; set; }
         public string HouseNumber { get; set; }
         public string ApartmentNumber { get; set; }
-
-        //public virtual ICollection<SubscriberRelationship> RelationshipHistory { get; set; }
-        //public virtual ICollection<OrderOnCableTV> OrderHistory { get; set; }
-
-
     }
 }

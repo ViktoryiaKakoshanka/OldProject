@@ -11,15 +11,7 @@ namespace WpfOrganization.BLL.Services
     public class CityService : ICityService
     {
         private IUnitOfWork Database { get; set; }
-
-        public ViewModel.OrderOnCableTVViewModel OrderOnCableTVViewModel
-        {
-            get => default(ViewModel.OrderOnCableTVViewModel);
-            set
-            {
-            }
-        }
-
+        
         public CityService(IUnitOfWork database)
         {
             Database = database;

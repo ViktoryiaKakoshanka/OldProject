@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfOrganization.GenericData
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfOrganization.DAL", "WpfOrganization.DAL\WpfOrganization.DAL.csproj", "{98D4E513-3B72-4D31-9022-4C3286B99ECB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfOrganization.BLL", "WpfOrganization.BLL\WpfOrganization.BLL.csproj", "{9F4E2D3B-8DE2-414E-81F9-B361FAA0E5C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,14 @@ Global
 		{98D4E513-3B72-4D31-9022-4C3286B99ECB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{98D4E513-3B72-4D31-9022-4C3286B99ECB}.Release|x86.ActiveCfg = Release|Any CPU
 		{98D4E513-3B72-4D31-9022-4C3286B99ECB}.Release|x86.Build.0 = Release|Any CPU
+		{9F4E2D3B-8DE2-414E-81F9-B361FAA0E5C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F4E2D3B-8DE2-414E-81F9-B361FAA0E5C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F4E2D3B-8DE2-414E-81F9-B361FAA0E5C3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9F4E2D3B-8DE2-414E-81F9-B361FAA0E5C3}.Debug|x86.Build.0 = Debug|Any CPU
+		{9F4E2D3B-8DE2-414E-81F9-B361FAA0E5C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F4E2D3B-8DE2-414E-81F9-B361FAA0E5C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F4E2D3B-8DE2-414E-81F9-B361FAA0E5C3}.Release|x86.ActiveCfg = Release|Any CPU
+		{9F4E2D3B-8DE2-414E-81F9-B361FAA0E5C3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,9 +8,9 @@ namespace WpfOrganization.BLL.DTO
         public int Id { get; set; }
 
         public int UserId { get; set; }
-        
+
         public int? ResponsibleMasterId { get; set; }
-        
+
         public int? MasterPerformerId { get; set; }
 
         public int? CityId { get; set; }

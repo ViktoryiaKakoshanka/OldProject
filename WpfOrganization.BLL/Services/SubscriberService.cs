@@ -11,15 +11,7 @@ namespace WpfOrganization.BLL.Services
     public class SubscriberService : ISubscriberService
     {
         private IUnitOfWork Database { get; set; }
-
-        public ViewModel.OrderOnCableTVViewModel OrderOnCableTVViewModel
-        {
-            get => default(ViewModel.OrderOnCableTVViewModel);
-            set
-            {
-            }
-        }
-
+        
         public SubscriberService(IUnitOfWork database)
         {
             Database = database;
@@ -52,8 +44,9 @@ namespace WpfOrganization.BLL.Services
 
         public IEnumerable<SubscriberDTO> GetSubscribers()
         {
+            var a = Database.Subscribers.GetAll();
             var mapper = new MapperConfiguration(config => config.CreateMap<Subscriber, SubscriberDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<Subscriber>, IEnumerable<SubscriberDTO>>(Database.Subscribers.GetAll());
+            return mapper.Map<IEnumerable<Subscriber>, IEnumerable<SubscriberDTO>>(a);
         }
 
         public void Dispose()

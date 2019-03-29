@@ -1,6 +1,6 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
-using AutoMapper;
 using WpfOrganization.BLL.DTO;
 using WpfOrganization.BLL.Interfaces;
 using WpfOrganization.DAL.Entities;
@@ -13,20 +13,12 @@ namespace WpfOrganization.BLL.Services
     public class OrderOnCableTVService : IOrderService
     {
         private IUnitOfWork Database { get; set; }
-
-        public ViewModel.OrderOnCableTVViewModel OrderOnCableTVViewModel
-        {
-            get => default(ViewModel.OrderOnCableTVViewModel);
-            set
-            {
-            }
-        }
-
+        
         public OrderOnCableTVService(IUnitOfWork database)
         {
             Database = database;
         }
-        
+
         public void MakeOrder(OrderOnCableTVDTO orderDTO)
         {
             var master = Database.Masters.FindById(orderDTO.MasterId);
@@ -41,7 +33,7 @@ namespace WpfOrganization.BLL.Services
             {
                 throw new Exception.ValidationException("Subscriber not found.", string.Empty);
             }
-            
+
             var order = new OrderOnCableTV
             {
                 MasterId = master.Id,

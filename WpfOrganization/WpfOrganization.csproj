@@ -71,11 +71,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BLL\Entities\Subscriber.cs" />
-    <Compile Include="BLL\Interfaces\ICityService.cs" />
-    <Compile Include="BLL\Interfaces\ISubscriberService.cs" />
-    <Compile Include="BLL\Services\CityService.cs" />
-    <Compile Include="BLL\Services\SubscriberService.cs" />
     <Compile Include="ViewModel\OrderOnCableTVViewModel.cs" />
     <Compile Include="View\OrderOnCableTV.xaml.cs">
       <DependentUpon>OrderOnCableTV.xaml</DependentUpon>
@@ -88,23 +83,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BLL\DTO\AdminRole.cs" />
-    <Compile Include="BLL\DTO\CableTVProblemDTO.cs" />
-    <Compile Include="BLL\DTO\CityDTO.cs" />
-    <Compile Include="BLL\DTO\StreetDTO.cs" />
-    <Compile Include="BLL\DTO\MasterDTO.cs" />
-    <Compile Include="BLL\DTO\OrderOnCableTVDTO.cs" />
-    <Compile Include="BLL\DTO\OrderRepairAndRestructionDTO.cs" />
-    <Compile Include="BLL\DTO\RelationshipTypeDTO.cs" />
-    <Compile Include="BLL\DTO\StreetTypeDTO.cs" />
-    <Compile Include="BLL\DTO\SubscriberDTO.cs" />
-    <Compile Include="BLL\DTO\SubscriberRelationshipDTO.cs" />
-    <Compile Include="BLL\DTO\UserActionDTO.cs" />
-    <Compile Include="BLL\DTO\UserDTO.cs" />
-    <Compile Include="BLL\Infrastructure\ServiceModule.cs" />
-    <Compile Include="BLL\Infrastructure\ValidationException.cs" />
-    <Compile Include="BLL\Interfaces\IOrderService.cs" />
-    <Compile Include="BLL\Services\OrderOnCableTVService.cs" />
     <Compile Include="ViewModel\AuthorizationWindowViewModel.cs" />
     <Compile Include="View\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
@@ -143,13 +121,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\BusinessModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\properties.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WpfOrganization.BLL\WpfOrganization.BLL.csproj">
+      <Project>{9F4E2D3B-8DE2-414E-81F9-B361FAA0E5C3}</Project>
+      <Name>WpfOrganization.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WpfOrganization.DAL\WpfOrganization.DAL.csproj">
       <Project>{98d4e513-3b72-4d31-9022-4c3286b99ecb}</Project>
       <Name>WpfOrganization.DAL</Name>

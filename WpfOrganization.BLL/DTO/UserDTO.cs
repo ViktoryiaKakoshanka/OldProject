@@ -1,4 +1,6 @@
-﻿namespace WpfOrganization.BLL.DTO
+﻿using WpfOrganization.GenericData;
+
+namespace WpfOrganization.BLL.DTO
 {
     public class UserDTO
     {

@@ -9,7 +9,7 @@ namespace WpfOrganization.BLL.Interfaces
 
         CityDTO GetCity(int idMaster);
         IEnumerable<CityDTO> GetCities();
-        
+
         void Dispose();
     }
 }

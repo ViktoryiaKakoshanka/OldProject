@@ -6,7 +6,7 @@ namespace WpfOrganization.BLL.DTO
     public class OrderOnCableTVDTO
     {
         public int Id { get; set; }
-        
+
         public int SubscriberId { get; set; }
         public SubscriberDTO Subscriber { get; set; }
 
