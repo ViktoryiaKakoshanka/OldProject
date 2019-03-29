@@ -96,7 +96,7 @@ namespace WpfOrganization.DAL.EF
                 IsCollectiveOrder = false,
                 OrderStatus = OrderStatus.Created,
                 Subscriber = subscriber,
-                Remark = "Test",                
+                Remark = "Test",
             });
 
             db.SaveChanges();

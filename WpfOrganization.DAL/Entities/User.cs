@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
-using WpfOrganization.BLL.DTO;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using WpfOrganization.GenericData;
 
 namespace WpfOrganization.DAL.Entities
 {
@@ -11,6 +15,6 @@ namespace WpfOrganization.DAL.Entities
         public bool LoggedIn { get; set; }
         public AdminRole AdminRole { get; set; }
 
-        public virtual  ICollection<UserAction> UserActionHistory { get; set; }
+        public virtual ICollection<UserAction> UserActionHistory { get; set; }
     }
 }

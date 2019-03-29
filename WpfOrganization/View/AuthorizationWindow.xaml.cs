@@ -4,6 +4,7 @@ using WpfOrganization.BLL.DTO;
 using WpfOrganization.DAL.EF;
 using WpfOrganization.DAL.Entities;
 using WpfOrganization.GenericData;
+using AdminRole = WpfOrganization.GenericData.AdminRole;
 
 namespace WpfOrganization
 {

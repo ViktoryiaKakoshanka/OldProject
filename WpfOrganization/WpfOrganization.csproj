@@ -76,7 +76,6 @@
     <Compile Include="BLL\Interfaces\ISubscriberService.cs" />
     <Compile Include="BLL\Services\CityService.cs" />
     <Compile Include="BLL\Services\SubscriberService.cs" />
-    <Compile Include="DAL\Repositories\SubscriberRepository.cs" />
     <Compile Include="ViewModel\OrderOnCableTVViewModel.cs" />
     <Compile Include="View\OrderOnCableTV.xaml.cs">
       <DependentUpon>OrderOnCableTV.xaml</DependentUpon>
@@ -106,23 +105,6 @@
     <Compile Include="BLL\Infrastructure\ValidationException.cs" />
     <Compile Include="BLL\Interfaces\IOrderService.cs" />
     <Compile Include="BLL\Services\OrderOnCableTVService.cs" />
-    <Compile Include="DAL\EF\DatabaseContext.cs" />
-    <Compile Include="DAL\EF\DbInitializer.cs" />
-    <Compile Include="DAL\Entities\CableTVProblem.cs" />
-    <Compile Include="DAL\Entities\City.cs" />
-    <Compile Include="DAL\Entities\FullName.cs" />
-    <Compile Include="DAL\Entities\OrderRepairAndRestruction.cs" />
-    <Compile Include="DAL\Entities\Subscriber.cs" />
-    <Compile Include="DAL\Entities\Master.cs" />
-    <Compile Include="DAL\Entities\OrderOnCableTV.cs" />
-    <Compile Include="DAL\Entities\Street.cs" />
-    <Compile Include="DAL\Entities\User.cs" />
-    <Compile Include="DAL\Entities\UserAction.cs" />
-    <Compile Include="DAL\Entities\SubscriberRelationship.cs" />
-    <Compile Include="DAL\Interfaces\IGenericRepository.cs" />
-    <Compile Include="DAL\Interfaces\IUnitOfWork.cs" />
-    <Compile Include="DAL\Repositories\GenericRepository.cs" />
-    <Compile Include="DAL\Repositories\EFUnitOfWork.cs" />
     <Compile Include="ViewModel\AuthorizationWindowViewModel.cs" />
     <Compile Include="View\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
@@ -168,6 +150,10 @@
     <Resource Include="Images\properties.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WpfOrganization.DAL\WpfOrganization.DAL.csproj">
+      <Project>{98d4e513-3b72-4d31-9022-4c3286b99ecb}</Project>
+      <Name>WpfOrganization.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WpfOrganization.GenericData\WpfOrganization.GenericData.csproj">
       <Project>{c0776e60-e2d5-4ce4-ac94-92043a9f6879}</Project>
       <Name>WpfOrganization.GenericData</Name>

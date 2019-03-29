@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using WpfOrganization.BLL.DTO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using WpfOrganization.GenericData;
 
 namespace WpfOrganization.DAL.Entities
@@ -9,7 +12,7 @@ namespace WpfOrganization.DAL.Entities
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        
+
         public int SubscriberId { get; set; }
         public virtual Subscriber Subscriber { get; set; }
 

@@ -8,7 +8,7 @@ namespace WpfOrganization.DAL.Repositories
     public class EFUnitOfWork : IUnitOfWork, IDisposable
     {
         private DatabaseContext _db;
-        
+
         private IGenericRepository<Master> _masters;
         private IGenericRepository<CableTVProblem> _cableTVProblems;
         private IGenericRepository<OrderOnCableTV> _orderOnCableTV;
@@ -58,12 +58,12 @@ namespace WpfOrganization.DAL.Repositories
         {
             get => _streets ?? (_streets = new GenericRepository<Street>(_db, _db.Streets));
         }
-        
+
         public IGenericRepository<Subscriber> Subscribers
         {
             get => _subscribers ?? (_subscribers = new GenericRepository<Subscriber>(_db, _db.Subscribers));
         }
-        
+
         public IGenericRepository<SubscriberRelationship> SubscriberRelationships
         {
             get => _subscriberrelationships ?? (_subscriberrelationships =
@@ -80,14 +80,6 @@ namespace WpfOrganization.DAL.Repositories
             get => _userActionHistory ?? (_userActionHistory = new GenericRepository<UserAction>(_db, _db.UserActions));
         }
 
-        public ViewModel.OrderOnCableTVViewModel OrderOnCableTVViewModel
-        {
-            get => default(ViewModel.OrderOnCableTVViewModel);
-            set
-            {
-            }
-        }
-
         public void Save()
         {
             _db.SaveChanges();
@@ -95,7 +87,7 @@ namespace WpfOrganization.DAL.Repositories
 
         public virtual void Dispose(bool dicposing)
         {
-            if ( ! _disposed )
+            if (!_disposed)
             {
                 if (dicposing)
                 {

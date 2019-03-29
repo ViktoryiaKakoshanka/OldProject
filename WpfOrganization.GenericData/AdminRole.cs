@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfOrganization.DAL.Repositories
+namespace WpfOrganization.GenericData
 {
-    public class SubscriberRepository //: GenericRepository<SubscriberRepository>
+    public enum AdminRole : byte
     {
-
+        Dispatcher = 1,
+        Administrator = 2
     }
 }

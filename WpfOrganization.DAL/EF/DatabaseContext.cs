@@ -6,7 +6,7 @@ namespace WpfOrganization.DAL.EF
     public class DatabaseContext : DbContext
     {
         public DbSet<Master> Masters { get; set; }
-        
+
         public DbSet<CableTVProblem> CableTvProblems { get; set; }
         public DbSet<OrderOnCableTV> OrdersOnCableTv { get; set; }
         public DbSet<OrderRepairAndRestruction> OrdersRepairAndRestruction { get; set; }

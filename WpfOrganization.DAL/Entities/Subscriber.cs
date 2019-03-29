@@ -8,7 +8,7 @@ namespace WpfOrganization.DAL.Entities
     public class Subscriber
     {
         public int Id { get; set; }
-        
+
         [Index(IsUnique = true)]
         public int NumberOfContract { get; set; }
         public DateTime ContractDate { get; set; }

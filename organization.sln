@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfOrganization", "WpfOrgan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfOrganization.GenericData", "WpfOrganization.GenericData\WpfOrganization.GenericData.csproj", "{C0776E60-E2D5-4CE4-AC94-92043A9F6879}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfOrganization.DAL", "WpfOrganization.DAL\WpfOrganization.DAL.csproj", "{98D4E513-3B72-4D31-9022-4C3286B99ECB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,14 @@ Global
 		{C0776E60-E2D5-4CE4-AC94-92043A9F6879}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C0776E60-E2D5-4CE4-AC94-92043A9F6879}.Release|x86.ActiveCfg = Release|Any CPU
 		{C0776E60-E2D5-4CE4-AC94-92043A9F6879}.Release|x86.Build.0 = Release|Any CPU
+		{98D4E513-3B72-4D31-9022-4C3286B99ECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98D4E513-3B72-4D31-9022-4C3286B99ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98D4E513-3B72-4D31-9022-4C3286B99ECB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{98D4E513-3B72-4D31-9022-4C3286B99ECB}.Debug|x86.Build.0 = Debug|Any CPU
+		{98D4E513-3B72-4D31-9022-4C3286B99ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98D4E513-3B72-4D31-9022-4C3286B99ECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98D4E513-3B72-4D31-9022-4C3286B99ECB}.Release|x86.ActiveCfg = Release|Any CPU
+		{98D4E513-3B72-4D31-9022-4C3286B99ECB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
