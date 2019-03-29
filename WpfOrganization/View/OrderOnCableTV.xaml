@@ -7,9 +7,9 @@
         xmlns:ViewModel="clr-namespace:WpfOrganization.ViewModel"
         mc:Ignorable="d"
         Title="Заказы" Height="525.521" Width="1019.225">
-    <Window.DataContext>
+    <!--<Window.DataContext>
         <ViewModel:OrderOnCableTVViewModel/>
-    </Window.DataContext>
+    </Window.DataContext>-->
     <Grid Margin="0,0,0,-3">
         <Grid.RowDefinitions>
             <RowDefinition Height="236*"/>

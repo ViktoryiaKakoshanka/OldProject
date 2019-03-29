@@ -1,15 +1,14 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
 using WpfOrganization.BLL.DTO;
+using WpfOrganization.BLL.Interfaces;
 using WpfOrganization.GenericData;
 
-namespace WpfOrganization.DAL.Entities
+namespace WpfOrganization.BLL.Entities
 {
-    public class OrderOnCableTV
+    public class OrderOnCableTV //: IOrderService
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        
+
         public int SubscriberId { get; set; }
         public virtual Subscriber Subscriber { get; set; }
 
@@ -18,11 +17,11 @@ namespace WpfOrganization.DAL.Entities
         public string Remark { get; set; }
 
         public int? CableTVProblemId { get; set; }
-        public virtual CableTVProblem Problem { get; set; }
+        //public virtual CableTVProblem Problem { get; set; }
         public string NonStandardProblem { get; set; }
 
         public int? MasterId { get; set; }
-        public virtual Master Master { get; set; }
+        //public virtual Master Master { get; set; }
 
         public OrderStatus OrderStatus { get; set; }
         public DateTime? ExecutionDate { get; set; }

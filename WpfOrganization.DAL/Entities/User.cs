@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using WpfOrganization.BLL.DTO;
+using WpfOrganization.GenericData;
 
 namespace WpfOrganization.DAL.Entities
 {

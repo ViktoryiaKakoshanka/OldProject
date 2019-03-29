@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using WpfOrganization.BLL.DTO;
 using WpfOrganization.BLL.Interfaces;
+using WpfOrganization.DAL;
 using WpfOrganization.DAL.Entities;
 using WpfOrganization.DAL.Interfaces;
 
@@ -11,13 +12,9 @@ namespace WpfOrganization.BLL.Services
     public class CityService : ICityService
     {
         private IUnitOfWork Database { get; set; }
-
-        public ViewModel.OrderOnCableTVViewModel OrderOnCableTVViewModel
+        
+        public CityService() : this(TemporaryUnitOfWork.Database)
         {
-            get => default(ViewModel.OrderOnCableTVViewModel);
-            set
-            {
-            }
         }
 
         public CityService(IUnitOfWork database)
@@ -37,8 +34,9 @@ namespace WpfOrganization.BLL.Services
 
         public IEnumerable<CityDTO> GetCities()
         {
+            var cities = Database.Cities.GetAll();
             var mapper = new MapperConfiguration(config => config.CreateMap<City, CityDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<City>, IEnumerable<CityDTO>>(Database.Cities.GetAll());
+            return mapper.Map<IEnumerable<City>, IEnumerable<CityDTO>>(cities);
         }
 
         public CityDTO GetCity(int idMaster)

@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using WpfOrganization.GenericData;
 
-namespace WpfOrganization.BLL.Entities
+namespace WpfOrganization.DAL.Entities
 {
-    class Subscriber
+    public class Subscriber
     {
         public int Id { get; set; }
-
+        
+        //[Index(IsUnique = true)]
         public int NumberOfContract { get; set; }
         public DateTime ContractDate { get; set; }
 
@@ -22,18 +24,15 @@ namespace WpfOrganization.BLL.Entities
         public virtual RelationshipType RelationshipType { get; set; }
 
         public int? CityId { get; set; }
-        //public virtual City City { get; set; }
+        public virtual City City { get; set; }
 
         public int? StreetId { get; set; }
-       // public virtual Street Street { get; set; }
+        public virtual Street Street { get; set; }
 
-        public string StreetNumber { get; set; }
         public string HouseNumber { get; set; }
         public string ApartmentNumber { get; set; }
 
-        //public virtual ICollection<SubscriberRelationship> RelationshipHistory { get; set; }
-        //public virtual ICollection<OrderOnCableTV> OrderHistory { get; set; }
-
-
+        public virtual ICollection<SubscriberRelationship> RelationshipHistory { get; set; }
+        public virtual ICollection<OrderOnCableTV> OrderHistory { get; set; }
     }
 }

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="Ninject" Version="4.0.0-beta-0134" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WpfOrganization.DAL\WpfOrganization.DAL.csproj" />
+    <ProjectReference Include="..\WpfOrganization.GenericData\WpfOrganization.GenericData.csproj" />
+  </ItemGroup>
+
+</Project>

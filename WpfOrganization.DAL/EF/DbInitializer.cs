@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using WpfOrganization.DAL.Entities;
 using WpfOrganization.GenericData;
@@ -26,20 +27,41 @@ namespace WpfOrganization.DAL.EF
                 WorkPhone = null
             });
 
-            var street = new Street
-            {
-                StreetName = "Ленинская",
-                StreetTypes = StreetType.Street
+            var streets = new List<Street> {
+                new Street
+                {
+                    StreetName = "Ленинская",
+                    StreetTypes = StreetType.Street
+                },
+                new Street
+                {
+                    StreetName = "ЧашникиУл",
+                    StreetTypes = StreetType.Street
+                },
+                new Street
+                {
+                    StreetName = "ХойникиУл",
+                    StreetTypes = StreetType.Street
+                },
             };
-            db.Streets.Add(street);
-
+            db.Streets.AddRange(streets);
+            
             var city = new City
             {
                 CityName = "Чашники",
                 ShortNameOfCityType = "г."
             };
-            city.Streets.Add(street);
+            city.Streets.Add(streets[0]);
+            city.Streets.Add(streets[1]);
             db.Cities.Add(city);
+
+            var city1 = new City
+            {
+                CityName = "Хойники",
+                ShortNameOfCityType = "г."
+            };
+            city1.Streets.Add(streets[2]);
+            db.Cities.Add(city1);
 
             db.CableTvProblems.Add(new CableTVProblem { NameOfProblem = "Снежат каналы" });
 
@@ -53,7 +75,7 @@ namespace WpfOrganization.DAL.EF
                 MobilePhone = "+3758 44 774-96-07",
                 NumberOfContract = 102,
                 RelationshipType = RelationshipType.StatePackage,
-                Street = street,
+                Street = streets[0],
                 Name = "Test Name",
                 Surname = "Test Surname",
                 Patronymic = "Test Patronymic"

@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using WpfOrganization.BLL.DTO;
 using WpfOrganization.BLL.Interfaces;
+using WpfOrganization.DAL;
 using WpfOrganization.DAL.Entities;
 using WpfOrganization.DAL.Interfaces;
+using WpfOrganization.DAL.Repositories;
 
 namespace WpfOrganization.BLL.Services
 {
@@ -12,12 +14,10 @@ namespace WpfOrganization.BLL.Services
     {
         private IUnitOfWork Database { get; set; }
 
-        public ViewModel.OrderOnCableTVViewModel OrderOnCableTVViewModel
+
+        public SubscriberService()
         {
-            get => default(ViewModel.OrderOnCableTVViewModel);
-            set
-            {
-            }
+            Database = new EFUnitOfWork(@"Data Source=.\SQLEXPRESS;Initial Catalog=CableTV;Integrated Security=True");
         }
 
         public SubscriberService(IUnitOfWork database)
@@ -52,8 +52,10 @@ namespace WpfOrganization.BLL.Services
 
         public IEnumerable<SubscriberDTO> GetSubscribers()
         {
-            var mapper = new MapperConfiguration(config => config.CreateMap<Subscriber, SubscriberDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<Subscriber>, IEnumerable<SubscriberDTO>>(Database.Subscribers.GetAll());
+            var a = Database.Subscribers.GetAll();
+            /* var mapper = new MapperConfiguration(config => config.CreateMap<Subscriber, SubscriberDTO>()).CreateMapper();
+             return mapper.Map<IEnumerable<Subscriber>, IEnumerable<SubscriberDTO>>(Database.Subscribers.GetAll());*/
+            return null;
         }
 
         public void Dispose()
