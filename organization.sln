@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "organization", "organizatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfOrganization", "WpfOrganization\WpfOrganization.csproj", "{C363DF8A-8B4C-4D3F-9701-AB56C997706A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfOrganization.GenericData", "WpfOrganization.GenericData\WpfOrganization.GenericData.csproj", "{C0776E60-E2D5-4CE4-AC94-92043A9F6879}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,19 +31,27 @@ Global
 		{C363DF8A-8B4C-4D3F-9701-AB56C997706A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C363DF8A-8B4C-4D3F-9701-AB56C997706A}.Release|x86.ActiveCfg = Release|Any CPU
 		{C363DF8A-8B4C-4D3F-9701-AB56C997706A}.Release|x86.Build.0 = Release|Any CPU
+		{C0776E60-E2D5-4CE4-AC94-92043A9F6879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0776E60-E2D5-4CE4-AC94-92043A9F6879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0776E60-E2D5-4CE4-AC94-92043A9F6879}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C0776E60-E2D5-4CE4-AC94-92043A9F6879}.Debug|x86.Build.0 = Debug|Any CPU
+		{C0776E60-E2D5-4CE4-AC94-92043A9F6879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0776E60-E2D5-4CE4-AC94-92043A9F6879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0776E60-E2D5-4CE4-AC94-92043A9F6879}.Release|x86.ActiveCfg = Release|Any CPU
+		{C0776E60-E2D5-4CE4-AC94-92043A9F6879}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {947175D5-9502-44D1-922F-FE0CCB0A1406}
-		VSStyle = GlasKalas Blue (Normal).vssf
-		VSTargetControls = FormsAndControls
-		VSToolStripStyle = Mixed
-		VSTextShadow = True
-		VSSkinFlatStyles = True
-		VSSkinToggleButtons = True
-		VSUseSystemFonts = False
 		VSCustomBkgrdPaint = True
+		VSUseSystemFonts = False
+		VSSkinToggleButtons = True
+		VSSkinFlatStyles = True
+		VSTextShadow = True
+		VSToolStripStyle = Mixed
+		VSTargetControls = FormsAndControls
+		VSStyle = GlasKalas Blue (Normal).vssf
+		SolutionGuid = {947175D5-9502-44D1-922F-FE0CCB0A1406}
 	EndGlobalSection
 EndGlobal

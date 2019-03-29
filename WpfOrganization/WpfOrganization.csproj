@@ -77,9 +77,6 @@
     <Compile Include="BLL\Services\CityService.cs" />
     <Compile Include="BLL\Services\SubscriberService.cs" />
     <Compile Include="DAL\Repositories\SubscriberRepository.cs" />
-    <Compile Include="GenericData\OrderStatus.cs" />
-    <Compile Include="GenericData\RelationshipType.cs" />
-    <Compile Include="GenericData\StreetType.cs" />
     <Compile Include="ViewModel\OrderOnCableTVViewModel.cs" />
     <Compile Include="View\OrderOnCableTV.xaml.cs">
       <DependentUpon>OrderOnCableTV.xaml</DependentUpon>
@@ -169,6 +166,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\properties.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WpfOrganization.GenericData\WpfOrganization.GenericData.csproj">
+      <Project>{c0776e60-e2d5-4ce4-ac94-92043a9f6879}</Project>
+      <Name>WpfOrganization.GenericData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
