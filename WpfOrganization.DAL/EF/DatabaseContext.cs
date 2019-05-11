@@ -22,12 +22,11 @@ namespace WpfOrganization.DAL.EF
 
         static DatabaseContext()
         {
-            Database.SetInitializer(new DbInitializer());
+            //Database.SetInitializer(new DbInitializer());
         }
 
-        public DatabaseContext(string connectionString) : base(connectionString)
+        public DatabaseContext() : base("CableTVConn")
         {
-
         }
     }
 }

@@ -22,9 +22,9 @@ namespace WpfOrganization.DAL.Repositories
 
         private bool _disposed;
 
-        public EFUnitOfWork(string connectionString)
+        public EFUnitOfWork()
         {
-            _db = new DatabaseContext(connectionString);
+            _db = new DatabaseContext();
         }
 
         public IGenericRepository<Master> Masters

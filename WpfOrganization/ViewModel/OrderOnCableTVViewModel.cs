@@ -14,7 +14,7 @@ namespace WpfOrganization.ViewModel
         public IList<OrderOnCableTV> OrdersOnCableTV { get; private set; }
         public IList<City> Cities { get; private set; }
 
-        private static IUnitOfWork unitOfWork = new EFUnitOfWork(@"Data Source=.\SQLEXPRESS;Initial Catalog=CableTV;Integrated Security=True");
+        private static IUnitOfWork unitOfWork = new EFUnitOfWork();
         private readonly IOrderService _orderService;
         private ISubscriberService _subscriberService;
         private ICityService _cityService;

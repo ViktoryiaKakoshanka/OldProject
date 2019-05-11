@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="222e41fb16a8440a9b985d6dcef17d94" Name="Diagram1">
+        <EntityTypeShape EntityType="CableTVModel.C__MigrationHistory" Width="3" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CableTVModel.CableTVProblem" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CableTVModel.City" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CableTVModel.Master" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CableTVModel.OrderOnCableTV" Width="1.5" PointX="10.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CableTVModel.OrderRepairAndRestruction" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CableTVModel.Street" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CableTVModel.SubscriberRelationship" Width="1.5" PointX="10.5" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CableTVModel.Subscriber" Width="1.5" PointX="8.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CableTVModel.UserAction" Width="1.5" PointX="5.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CableTVModel.User" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="CableTVModel.View_City_Test" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="CableTVModel.FK_dbo_OrderOnCableTVs_dbo_CableTVProblems_CableTVProblemId" ManuallyRouted="false" />
+        <AssociationConnector Association="CableTVModel.FK_dbo_OrderRepairAndRestructions_dbo_Cities_CityId" ManuallyRouted="false" />
+        <AssociationConnector Association="CableTVModel.FK_dbo_Streets_dbo_Cities_City_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="CableTVModel.FK_dbo_Subscribers_dbo_Cities_CityId" ManuallyRouted="false" />
+        <AssociationConnector Association="CableTVModel.FK_dbo_OrderOnCableTVs_dbo_Masters_MasterId" ManuallyRouted="false" />
+        <AssociationConnector Association="CableTVModel.FK_dbo_OrderRepairAndRestructions_dbo_Masters_MasterPerformerId" ManuallyRouted="false" />
+        <AssociationConnector Association="CableTVModel.FK_dbo_OrderRepairAndRestructions_dbo_Masters_ResponsibleMasterId" ManuallyRouted="false" />
+        <AssociationConnector Association="CableTVModel.FK_dbo_OrderOnCableTVs_dbo_Subscribers_SubscriberId" ManuallyRouted="false" />
+        <AssociationConnector Association="CableTVModel.FK_dbo_OrderRepairAndRestructions_dbo_Streets_StreetId" ManuallyRouted="false" />
+        <AssociationConnector Association="CableTVModel.FK_dbo_OrderRepairAndRestructions_dbo_Users_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="CableTVModel.FK_dbo_Subscribers_dbo_Streets_StreetId" ManuallyRouted="false" />
+        <AssociationConnector Association="CableTVModel.FK_dbo_SubscriberRelationships_dbo_Subscribers_SubscriberId" ManuallyRouted="false" />
+        <AssociationConnector Association="CableTVModel.FK_dbo_UserActions_dbo_Users_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="CableTVModel.MasterCities" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

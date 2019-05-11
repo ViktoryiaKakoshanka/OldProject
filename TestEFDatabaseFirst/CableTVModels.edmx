@@ -1,0 +1,1046 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CableTVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CableTVProblems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameOfProblem" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShortNameOfCityType" Type="nvarchar(max)" />
+          <Property Name="CityName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MasterCities">
+          <Key>
+            <PropertyRef Name="Master_Id" />
+            <PropertyRef Name="City_Id" />
+          </Key>
+          <Property Name="Master_Id" Type="int" Nullable="false" />
+          <Property Name="City_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Masters">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Patronymic" Type="nvarchar(max)" />
+          <Property Name="WorkPhone" Type="nvarchar(max)" />
+          <Property Name="SecondWorkPhone" Type="nvarchar(max)" />
+          <Property Name="HomePhone" Type="nvarchar(max)" />
+          <Property Name="SecondHomePhone" Type="nvarchar(max)" />
+          <Property Name="MobilePhone" Type="nvarchar(max)" />
+          <Property Name="SecondMobilePhone" Type="nvarchar(max)" />
+          <Property Name="Brigade" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderOnCableTVs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubscriberId" Type="int" Nullable="false" />
+          <Property Name="UserLocation" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="CableTVProblemId" Type="int" />
+          <Property Name="NonStandardProblem" Type="nvarchar(max)" />
+          <Property Name="MasterId" Type="int" />
+          <Property Name="OrderStatus" Type="tinyint" Nullable="false" />
+          <Property Name="ExecutionDate" Type="datetime" />
+          <Property Name="CallbackDate" Type="datetime" />
+          <Property Name="IsCollectiveOrder" Type="bit" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="EstimatedCompletionDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderRepairAndRestructions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ResponsibleMasterId" Type="int" />
+          <Property Name="MasterPerformerId" Type="int" />
+          <Property Name="CityId" Type="int" />
+          <Property Name="StreetId" Type="int" />
+          <Property Name="HouseNumber" Type="nvarchar(max)" />
+          <Property Name="ApartmentNumber" Type="nvarchar(max)" />
+          <Property Name="Problem" Type="nvarchar(max)" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="DateOfExecution" Type="datetime" Nullable="false" />
+          <Property Name="DateOfCallback" Type="datetime" Nullable="false" />
+          <Property Name="DateOfCreation" Type="datetime" Nullable="false" />
+          <Property Name="EstimatedCompletionDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Streets">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StreetName" Type="nvarchar(max)" />
+          <Property Name="StreetTypes" Type="int" Nullable="false" />
+          <Property Name="City_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="SubscriberRelationships">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RelationshipDate" Type="datetime" Nullable="false" />
+          <Property Name="SubscriberId" Type="int" Nullable="false" />
+          <Property Name="RelationshipType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subscribers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumberOfContract" Type="int" Nullable="false" />
+          <Property Name="ContractDate" Type="datetime" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Patronymic" Type="nvarchar(max)" />
+          <Property Name="HomePhone" Type="nvarchar(max)" />
+          <Property Name="MobilePhone" Type="nvarchar(max)" />
+          <Property Name="SecondMobilePhone" Type="nvarchar(max)" />
+          <Property Name="RelationshipType" Type="int" Nullable="false" />
+          <Property Name="CityId" Type="int" />
+          <Property Name="StreetId" Type="int" />
+          <Property Name="HouseNumber" Type="nvarchar(max)" />
+          <Property Name="ApartmentNumber" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UserActions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateOfAction" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="LoggedIn" Type="bit" Nullable="false" />
+          <Property Name="AdminRole" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CableTV.dbo.View_City_Test' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_City_Test">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ShortNameOfCityType" Type="nvarchar(max)" />
+          <Property Name="CityName" Type="nvarchar(max)" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_MasterCities_dbo_Cities_City_Id">
+          <End Role="Cities" Type="Self.Cities" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MasterCities" Type="Self.MasterCities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MasterCities">
+              <PropertyRef Name="City_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_MasterCities_dbo_Masters_Master_Id">
+          <End Role="Masters" Type="Self.Masters" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MasterCities" Type="Self.MasterCities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Masters">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MasterCities">
+              <PropertyRef Name="Master_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderOnCableTVs_dbo_CableTVProblems_CableTVProblemId">
+          <End Role="CableTVProblems" Type="Self.CableTVProblems" Multiplicity="0..1" />
+          <End Role="OrderOnCableTVs" Type="Self.OrderOnCableTVs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CableTVProblems">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderOnCableTVs">
+              <PropertyRef Name="CableTVProblemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderOnCableTVs_dbo_Masters_MasterId">
+          <End Role="Masters" Type="Self.Masters" Multiplicity="0..1" />
+          <End Role="OrderOnCableTVs" Type="Self.OrderOnCableTVs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Masters">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderOnCableTVs">
+              <PropertyRef Name="MasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderOnCableTVs_dbo_Subscribers_SubscriberId">
+          <End Role="Subscribers" Type="Self.Subscribers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderOnCableTVs" Type="Self.OrderOnCableTVs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subscribers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderOnCableTVs">
+              <PropertyRef Name="SubscriberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderRepairAndRestructions_dbo_Cities_CityId">
+          <End Role="Cities" Type="Self.Cities" Multiplicity="0..1" />
+          <End Role="OrderRepairAndRestructions" Type="Self.OrderRepairAndRestructions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderRepairAndRestructions">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderRepairAndRestructions_dbo_Masters_MasterPerformerId">
+          <End Role="Masters" Type="Self.Masters" Multiplicity="0..1" />
+          <End Role="OrderRepairAndRestructions" Type="Self.OrderRepairAndRestructions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Masters">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderRepairAndRestructions">
+              <PropertyRef Name="MasterPerformerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderRepairAndRestructions_dbo_Masters_ResponsibleMasterId">
+          <End Role="Masters" Type="Self.Masters" Multiplicity="0..1" />
+          <End Role="OrderRepairAndRestructions" Type="Self.OrderRepairAndRestructions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Masters">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderRepairAndRestructions">
+              <PropertyRef Name="ResponsibleMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderRepairAndRestructions_dbo_Streets_StreetId">
+          <End Role="Streets" Type="Self.Streets" Multiplicity="0..1" />
+          <End Role="OrderRepairAndRestructions" Type="Self.OrderRepairAndRestructions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Streets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderRepairAndRestructions">
+              <PropertyRef Name="StreetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderRepairAndRestructions_dbo_Users_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderRepairAndRestructions" Type="Self.OrderRepairAndRestructions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderRepairAndRestructions">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Streets_dbo_Cities_City_Id">
+          <End Role="Cities" Type="Self.Cities" Multiplicity="0..1" />
+          <End Role="Streets" Type="Self.Streets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Streets">
+              <PropertyRef Name="City_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_SubscriberRelationships_dbo_Subscribers_SubscriberId">
+          <End Role="Subscribers" Type="Self.Subscribers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SubscriberRelationships" Type="Self.SubscriberRelationships" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subscribers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SubscriberRelationships">
+              <PropertyRef Name="SubscriberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Subscribers_dbo_Cities_CityId">
+          <End Role="Cities" Type="Self.Cities" Multiplicity="0..1" />
+          <End Role="Subscribers" Type="Self.Subscribers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Subscribers">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Subscribers_dbo_Streets_StreetId">
+          <End Role="Streets" Type="Self.Streets" Multiplicity="0..1" />
+          <End Role="Subscribers" Type="Self.Subscribers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Streets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Subscribers">
+              <PropertyRef Name="StreetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserActions_dbo_Users_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserActions" Type="Self.UserActions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserActions">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Test_Procedure_Name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="countCity" Type="int" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="CableTVModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CableTVProblems" EntityType="Self.CableTVProblems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MasterCities" EntityType="Self.MasterCities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Masters" EntityType="Self.Masters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderOnCableTVs" EntityType="Self.OrderOnCableTVs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderRepairAndRestructions" EntityType="Self.OrderRepairAndRestructions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Streets" EntityType="Self.Streets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubscriberRelationships" EntityType="Self.SubscriberRelationships" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subscribers" EntityType="Self.Subscribers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserActions" EntityType="Self.UserActions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="View_City_Test" EntityType="Self.View_City_Test" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_City_Test].[ShortNameOfCityType] AS [ShortNameOfCityType], 
+    [View_City_Test].[CityName] AS [CityName], 
+    [View_City_Test].[Id] AS [Id]
+    FROM [dbo].[View_City_Test] AS [View_City_Test]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_dbo_MasterCities_dbo_Cities_City_Id" Association="Self.FK_dbo_MasterCities_dbo_Cities_City_Id">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="MasterCities" EntitySet="MasterCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_MasterCities_dbo_Masters_Master_Id" Association="Self.FK_dbo_MasterCities_dbo_Masters_Master_Id">
+            <End Role="Masters" EntitySet="Masters" />
+            <End Role="MasterCities" EntitySet="MasterCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderOnCableTVs_dbo_CableTVProblems_CableTVProblemId" Association="Self.FK_dbo_OrderOnCableTVs_dbo_CableTVProblems_CableTVProblemId">
+            <End Role="CableTVProblems" EntitySet="CableTVProblems" />
+            <End Role="OrderOnCableTVs" EntitySet="OrderOnCableTVs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderOnCableTVs_dbo_Masters_MasterId" Association="Self.FK_dbo_OrderOnCableTVs_dbo_Masters_MasterId">
+            <End Role="Masters" EntitySet="Masters" />
+            <End Role="OrderOnCableTVs" EntitySet="OrderOnCableTVs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderOnCableTVs_dbo_Subscribers_SubscriberId" Association="Self.FK_dbo_OrderOnCableTVs_dbo_Subscribers_SubscriberId">
+            <End Role="Subscribers" EntitySet="Subscribers" />
+            <End Role="OrderOnCableTVs" EntitySet="OrderOnCableTVs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderRepairAndRestructions_dbo_Cities_CityId" Association="Self.FK_dbo_OrderRepairAndRestructions_dbo_Cities_CityId">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="OrderRepairAndRestructions" EntitySet="OrderRepairAndRestructions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderRepairAndRestructions_dbo_Masters_MasterPerformerId" Association="Self.FK_dbo_OrderRepairAndRestructions_dbo_Masters_MasterPerformerId">
+            <End Role="Masters" EntitySet="Masters" />
+            <End Role="OrderRepairAndRestructions" EntitySet="OrderRepairAndRestructions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderRepairAndRestructions_dbo_Masters_ResponsibleMasterId" Association="Self.FK_dbo_OrderRepairAndRestructions_dbo_Masters_ResponsibleMasterId">
+            <End Role="Masters" EntitySet="Masters" />
+            <End Role="OrderRepairAndRestructions" EntitySet="OrderRepairAndRestructions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderRepairAndRestructions_dbo_Streets_StreetId" Association="Self.FK_dbo_OrderRepairAndRestructions_dbo_Streets_StreetId">
+            <End Role="Streets" EntitySet="Streets" />
+            <End Role="OrderRepairAndRestructions" EntitySet="OrderRepairAndRestructions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderRepairAndRestructions_dbo_Users_UserId" Association="Self.FK_dbo_OrderRepairAndRestructions_dbo_Users_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="OrderRepairAndRestructions" EntitySet="OrderRepairAndRestructions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Streets_dbo_Cities_City_Id" Association="Self.FK_dbo_Streets_dbo_Cities_City_Id">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Streets" EntitySet="Streets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_SubscriberRelationships_dbo_Subscribers_SubscriberId" Association="Self.FK_dbo_SubscriberRelationships_dbo_Subscribers_SubscriberId">
+            <End Role="Subscribers" EntitySet="Subscribers" />
+            <End Role="SubscriberRelationships" EntitySet="SubscriberRelationships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Subscribers_dbo_Cities_CityId" Association="Self.FK_dbo_Subscribers_dbo_Cities_CityId">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Subscribers" EntitySet="Subscribers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Subscribers_dbo_Streets_StreetId" Association="Self.FK_dbo_Subscribers_dbo_Streets_StreetId">
+            <End Role="Streets" EntitySet="Streets" />
+            <End Role="Subscribers" EntitySet="Subscribers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserActions_dbo_Users_UserId" Association="Self.FK_dbo_UserActions_dbo_Users_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserActions" EntitySet="UserActions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CableTVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CableTVProblem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameOfProblem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OrderOnCableTVs" Relationship="Self.FK_dbo_OrderOnCableTVs_dbo_CableTVProblems_CableTVProblemId" FromRole="CableTVProblems" ToRole="OrderOnCableTVs" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShortNameOfCityType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CityName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OrderRepairAndRestructions" Relationship="Self.FK_dbo_OrderRepairAndRestructions_dbo_Cities_CityId" FromRole="Cities" ToRole="OrderRepairAndRestructions" />
+          <NavigationProperty Name="Streets" Relationship="Self.FK_dbo_Streets_dbo_Cities_City_Id" FromRole="Cities" ToRole="Streets" />
+          <NavigationProperty Name="Subscribers" Relationship="Self.FK_dbo_Subscribers_dbo_Cities_CityId" FromRole="Cities" ToRole="Subscribers" />
+          <NavigationProperty Name="Masters" Relationship="Self.MasterCities" FromRole="Cities" ToRole="Masters" />
+        </EntityType>
+        <EntityType Name="Master">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WorkPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecondWorkPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HomePhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecondHomePhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MobilePhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecondMobilePhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Brigade" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="OrderOnCableTVs" Relationship="Self.FK_dbo_OrderOnCableTVs_dbo_Masters_MasterId" FromRole="Masters" ToRole="OrderOnCableTVs" />
+          <NavigationProperty Name="OrderRepairAndRestructions" Relationship="Self.FK_dbo_OrderRepairAndRestructions_dbo_Masters_MasterPerformerId" FromRole="Masters" ToRole="OrderRepairAndRestructions" />
+          <NavigationProperty Name="OrderRepairAndRestructions1" Relationship="Self.FK_dbo_OrderRepairAndRestructions_dbo_Masters_ResponsibleMasterId" FromRole="Masters" ToRole="OrderRepairAndRestructions" />
+          <NavigationProperty Name="Cities" Relationship="Self.MasterCities" FromRole="Masters" ToRole="Cities" />
+        </EntityType>
+        <EntityType Name="OrderOnCableTV">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubscriberId" Type="Int32" Nullable="false" />
+          <Property Name="UserLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CableTVProblemId" Type="Int32" />
+          <Property Name="NonStandardProblem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MasterId" Type="Int32" />
+          <Property Name="OrderStatus" Type="Byte" Nullable="false" />
+          <Property Name="ExecutionDate" Type="DateTime" Precision="3" />
+          <Property Name="CallbackDate" Type="DateTime" Precision="3" />
+          <Property Name="IsCollectiveOrder" Type="Boolean" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EstimatedCompletionDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="CableTVProblem" Relationship="Self.FK_dbo_OrderOnCableTVs_dbo_CableTVProblems_CableTVProblemId" FromRole="OrderOnCableTVs" ToRole="CableTVProblems" />
+          <NavigationProperty Name="Master" Relationship="Self.FK_dbo_OrderOnCableTVs_dbo_Masters_MasterId" FromRole="OrderOnCableTVs" ToRole="Masters" />
+          <NavigationProperty Name="Subscriber" Relationship="Self.FK_dbo_OrderOnCableTVs_dbo_Subscribers_SubscriberId" FromRole="OrderOnCableTVs" ToRole="Subscribers" />
+        </EntityType>
+        <EntityType Name="OrderRepairAndRestruction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ResponsibleMasterId" Type="Int32" />
+          <Property Name="MasterPerformerId" Type="Int32" />
+          <Property Name="CityId" Type="Int32" />
+          <Property Name="StreetId" Type="Int32" />
+          <Property Name="HouseNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ApartmentNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Problem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" Nullable="false" />
+          <Property Name="DateOfExecution" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateOfCallback" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateOfCreation" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EstimatedCompletionDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="City" Relationship="Self.FK_dbo_OrderRepairAndRestructions_dbo_Cities_CityId" FromRole="OrderRepairAndRestructions" ToRole="Cities" />
+          <NavigationProperty Name="Master" Relationship="Self.FK_dbo_OrderRepairAndRestructions_dbo_Masters_MasterPerformerId" FromRole="OrderRepairAndRestructions" ToRole="Masters" />
+          <NavigationProperty Name="Master1" Relationship="Self.FK_dbo_OrderRepairAndRestructions_dbo_Masters_ResponsibleMasterId" FromRole="OrderRepairAndRestructions" ToRole="Masters" />
+          <NavigationProperty Name="Street" Relationship="Self.FK_dbo_OrderRepairAndRestructions_dbo_Streets_StreetId" FromRole="OrderRepairAndRestructions" ToRole="Streets" />
+          <NavigationProperty Name="User" Relationship="Self.FK_dbo_OrderRepairAndRestructions_dbo_Users_UserId" FromRole="OrderRepairAndRestructions" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Street">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StreetName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StreetTypes" Type="Int32" Nullable="false" />
+          <Property Name="City_Id" Type="Int32" />
+          <NavigationProperty Name="City" Relationship="Self.FK_dbo_Streets_dbo_Cities_City_Id" FromRole="Streets" ToRole="Cities" />
+          <NavigationProperty Name="OrderRepairAndRestructions" Relationship="Self.FK_dbo_OrderRepairAndRestructions_dbo_Streets_StreetId" FromRole="Streets" ToRole="OrderRepairAndRestructions" />
+          <NavigationProperty Name="Subscribers" Relationship="Self.FK_dbo_Subscribers_dbo_Streets_StreetId" FromRole="Streets" ToRole="Subscribers" />
+        </EntityType>
+        <EntityType Name="SubscriberRelationship">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RelationshipDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SubscriberId" Type="Int32" Nullable="false" />
+          <Property Name="RelationshipType" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Subscriber" Relationship="Self.FK_dbo_SubscriberRelationships_dbo_Subscribers_SubscriberId" FromRole="SubscriberRelationships" ToRole="Subscribers" />
+        </EntityType>
+        <EntityType Name="Subscriber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumberOfContract" Type="Int32" Nullable="false" />
+          <Property Name="ContractDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HomePhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MobilePhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecondMobilePhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RelationshipType" Type="Int32" Nullable="false" />
+          <Property Name="CityId" Type="Int32" />
+          <Property Name="StreetId" Type="Int32" />
+          <Property Name="HouseNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ApartmentNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="City" Relationship="Self.FK_dbo_Subscribers_dbo_Cities_CityId" FromRole="Subscribers" ToRole="Cities" />
+          <NavigationProperty Name="OrderOnCableTVs" Relationship="Self.FK_dbo_OrderOnCableTVs_dbo_Subscribers_SubscriberId" FromRole="Subscribers" ToRole="OrderOnCableTVs" />
+          <NavigationProperty Name="Street" Relationship="Self.FK_dbo_Subscribers_dbo_Streets_StreetId" FromRole="Subscribers" ToRole="Streets" />
+          <NavigationProperty Name="SubscriberRelationships" Relationship="Self.FK_dbo_SubscriberRelationships_dbo_Subscribers_SubscriberId" FromRole="Subscribers" ToRole="SubscriberRelationships" />
+        </EntityType>
+        <EntityType Name="UserAction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateOfAction" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_dbo_UserActions_dbo_Users_UserId" FromRole="UserActions" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LoggedIn" Type="Boolean" Nullable="false" />
+          <Property Name="AdminRole" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="OrderRepairAndRestructions" Relationship="Self.FK_dbo_OrderRepairAndRestructions_dbo_Users_UserId" FromRole="Users" ToRole="OrderRepairAndRestructions" />
+          <NavigationProperty Name="UserActions" Relationship="Self.FK_dbo_UserActions_dbo_Users_UserId" FromRole="Users" ToRole="UserActions" />
+        </EntityType>
+        <EntityType Name="View_City_Test">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ShortNameOfCityType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CityName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Association Name="FK_dbo_OrderOnCableTVs_dbo_CableTVProblems_CableTVProblemId">
+          <End Role="CableTVProblems" Type="Self.CableTVProblem" Multiplicity="0..1" />
+          <End Role="OrderOnCableTVs" Type="Self.OrderOnCableTV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CableTVProblems">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderOnCableTVs">
+              <PropertyRef Name="CableTVProblemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderRepairAndRestructions_dbo_Cities_CityId">
+          <End Role="Cities" Type="Self.City" Multiplicity="0..1" />
+          <End Role="OrderRepairAndRestructions" Type="Self.OrderRepairAndRestruction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderRepairAndRestructions">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Streets_dbo_Cities_City_Id">
+          <End Role="Cities" Type="Self.City" Multiplicity="0..1" />
+          <End Role="Streets" Type="Self.Street" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Streets">
+              <PropertyRef Name="City_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Subscribers_dbo_Cities_CityId">
+          <End Role="Cities" Type="Self.City" Multiplicity="0..1" />
+          <End Role="Subscribers" Type="Self.Subscriber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Subscribers">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderOnCableTVs_dbo_Masters_MasterId">
+          <End Role="Masters" Type="Self.Master" Multiplicity="0..1" />
+          <End Role="OrderOnCableTVs" Type="Self.OrderOnCableTV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Masters">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderOnCableTVs">
+              <PropertyRef Name="MasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderRepairAndRestructions_dbo_Masters_MasterPerformerId">
+          <End Role="Masters" Type="Self.Master" Multiplicity="0..1" />
+          <End Role="OrderRepairAndRestructions" Type="Self.OrderRepairAndRestruction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Masters">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderRepairAndRestructions">
+              <PropertyRef Name="MasterPerformerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderRepairAndRestructions_dbo_Masters_ResponsibleMasterId">
+          <End Role="Masters" Type="Self.Master" Multiplicity="0..1" />
+          <End Role="OrderRepairAndRestructions" Type="Self.OrderRepairAndRestruction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Masters">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderRepairAndRestructions">
+              <PropertyRef Name="ResponsibleMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderOnCableTVs_dbo_Subscribers_SubscriberId">
+          <End Role="Subscribers" Type="Self.Subscriber" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderOnCableTVs" Type="Self.OrderOnCableTV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subscribers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderOnCableTVs">
+              <PropertyRef Name="SubscriberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderRepairAndRestructions_dbo_Streets_StreetId">
+          <End Role="Streets" Type="Self.Street" Multiplicity="0..1" />
+          <End Role="OrderRepairAndRestructions" Type="Self.OrderRepairAndRestruction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Streets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderRepairAndRestructions">
+              <PropertyRef Name="StreetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderRepairAndRestructions_dbo_Users_UserId">
+          <End Role="Users" Type="Self.User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderRepairAndRestructions" Type="Self.OrderRepairAndRestruction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderRepairAndRestructions">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Subscribers_dbo_Streets_StreetId">
+          <End Role="Streets" Type="Self.Street" Multiplicity="0..1" />
+          <End Role="Subscribers" Type="Self.Subscriber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Streets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Subscribers">
+              <PropertyRef Name="StreetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_SubscriberRelationships_dbo_Subscribers_SubscriberId">
+          <End Role="Subscribers" Type="Self.Subscriber" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SubscriberRelationships" Type="Self.SubscriberRelationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subscribers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SubscriberRelationships">
+              <PropertyRef Name="SubscriberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserActions_dbo_Users_UserId">
+          <End Role="Users" Type="Self.User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserActions" Type="Self.UserAction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserActions">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MasterCities">
+          <End Role="Cities" Type="Self.City" Multiplicity="*" />
+          <End Role="Masters" Type="Self.Master" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="CableTVEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="CableTVProblems" EntityType="Self.CableTVProblem" />
+          <EntitySet Name="Cities" EntityType="Self.City" />
+          <EntitySet Name="Masters" EntityType="Self.Master" />
+          <EntitySet Name="OrderOnCableTVs" EntityType="Self.OrderOnCableTV" />
+          <EntitySet Name="OrderRepairAndRestructions" EntityType="Self.OrderRepairAndRestruction" />
+          <EntitySet Name="Streets" EntityType="Self.Street" />
+          <EntitySet Name="SubscriberRelationships" EntityType="Self.SubscriberRelationship" />
+          <EntitySet Name="Subscribers" EntityType="Self.Subscriber" />
+          <EntitySet Name="UserActions" EntityType="Self.UserAction" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="View_City_Test" EntityType="Self.View_City_Test" />
+          <AssociationSet Name="FK_dbo_OrderOnCableTVs_dbo_CableTVProblems_CableTVProblemId" Association="Self.FK_dbo_OrderOnCableTVs_dbo_CableTVProblems_CableTVProblemId">
+            <End Role="CableTVProblems" EntitySet="CableTVProblems" />
+            <End Role="OrderOnCableTVs" EntitySet="OrderOnCableTVs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderRepairAndRestructions_dbo_Cities_CityId" Association="Self.FK_dbo_OrderRepairAndRestructions_dbo_Cities_CityId">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="OrderRepairAndRestructions" EntitySet="OrderRepairAndRestructions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Streets_dbo_Cities_City_Id" Association="Self.FK_dbo_Streets_dbo_Cities_City_Id">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Streets" EntitySet="Streets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Subscribers_dbo_Cities_CityId" Association="Self.FK_dbo_Subscribers_dbo_Cities_CityId">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Subscribers" EntitySet="Subscribers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderOnCableTVs_dbo_Masters_MasterId" Association="Self.FK_dbo_OrderOnCableTVs_dbo_Masters_MasterId">
+            <End Role="Masters" EntitySet="Masters" />
+            <End Role="OrderOnCableTVs" EntitySet="OrderOnCableTVs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderRepairAndRestructions_dbo_Masters_MasterPerformerId" Association="Self.FK_dbo_OrderRepairAndRestructions_dbo_Masters_MasterPerformerId">
+            <End Role="Masters" EntitySet="Masters" />
+            <End Role="OrderRepairAndRestructions" EntitySet="OrderRepairAndRestructions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderRepairAndRestructions_dbo_Masters_ResponsibleMasterId" Association="Self.FK_dbo_OrderRepairAndRestructions_dbo_Masters_ResponsibleMasterId">
+            <End Role="Masters" EntitySet="Masters" />
+            <End Role="OrderRepairAndRestructions" EntitySet="OrderRepairAndRestructions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderOnCableTVs_dbo_Subscribers_SubscriberId" Association="Self.FK_dbo_OrderOnCableTVs_dbo_Subscribers_SubscriberId">
+            <End Role="Subscribers" EntitySet="Subscribers" />
+            <End Role="OrderOnCableTVs" EntitySet="OrderOnCableTVs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderRepairAndRestructions_dbo_Streets_StreetId" Association="Self.FK_dbo_OrderRepairAndRestructions_dbo_Streets_StreetId">
+            <End Role="Streets" EntitySet="Streets" />
+            <End Role="OrderRepairAndRestructions" EntitySet="OrderRepairAndRestructions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderRepairAndRestructions_dbo_Users_UserId" Association="Self.FK_dbo_OrderRepairAndRestructions_dbo_Users_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="OrderRepairAndRestructions" EntitySet="OrderRepairAndRestructions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Subscribers_dbo_Streets_StreetId" Association="Self.FK_dbo_Subscribers_dbo_Streets_StreetId">
+            <End Role="Streets" EntitySet="Streets" />
+            <End Role="Subscribers" EntitySet="Subscribers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_SubscriberRelationships_dbo_Subscribers_SubscriberId" Association="Self.FK_dbo_SubscriberRelationships_dbo_Subscribers_SubscriberId">
+            <End Role="Subscribers" EntitySet="Subscribers" />
+            <End Role="SubscriberRelationships" EntitySet="SubscriberRelationships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserActions_dbo_Users_UserId" Association="Self.FK_dbo_UserActions_dbo_Users_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserActions" EntitySet="UserActions" />
+          </AssociationSet>
+          <AssociationSet Name="MasterCities" Association="Self.MasterCities">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Masters" EntitySet="Masters" />
+          </AssociationSet>
+          <FunctionImport Name="Test_Procedure_Name">
+            <Parameter Name="countCity" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CableTVModelStoreContainer" CdmEntityContainer="CableTVEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="CableTVModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CableTVProblems">
+            <EntityTypeMapping TypeName="CableTVModel.CableTVProblem">
+              <MappingFragment StoreEntitySet="CableTVProblems">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameOfProblem" ColumnName="NameOfProblem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="CableTVModel.City">
+              <MappingFragment StoreEntitySet="Cities">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ShortNameOfCityType" ColumnName="ShortNameOfCityType" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Masters">
+            <EntityTypeMapping TypeName="CableTVModel.Master">
+              <MappingFragment StoreEntitySet="Masters">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+                <ScalarProperty Name="SecondWorkPhone" ColumnName="SecondWorkPhone" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="SecondHomePhone" ColumnName="SecondHomePhone" />
+                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+                <ScalarProperty Name="SecondMobilePhone" ColumnName="SecondMobilePhone" />
+                <ScalarProperty Name="Brigade" ColumnName="Brigade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderOnCableTVs">
+            <EntityTypeMapping TypeName="CableTVModel.OrderOnCableTV">
+              <MappingFragment StoreEntitySet="OrderOnCableTVs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SubscriberId" ColumnName="SubscriberId" />
+                <ScalarProperty Name="UserLocation" ColumnName="UserLocation" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="CableTVProblemId" ColumnName="CableTVProblemId" />
+                <ScalarProperty Name="NonStandardProblem" ColumnName="NonStandardProblem" />
+                <ScalarProperty Name="MasterId" ColumnName="MasterId" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="ExecutionDate" ColumnName="ExecutionDate" />
+                <ScalarProperty Name="CallbackDate" ColumnName="CallbackDate" />
+                <ScalarProperty Name="IsCollectiveOrder" ColumnName="IsCollectiveOrder" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="EstimatedCompletionDate" ColumnName="EstimatedCompletionDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderRepairAndRestructions">
+            <EntityTypeMapping TypeName="CableTVModel.OrderRepairAndRestruction">
+              <MappingFragment StoreEntitySet="OrderRepairAndRestructions">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ResponsibleMasterId" ColumnName="ResponsibleMasterId" />
+                <ScalarProperty Name="MasterPerformerId" ColumnName="MasterPerformerId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="StreetId" ColumnName="StreetId" />
+                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+                <ScalarProperty Name="Problem" ColumnName="Problem" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DateOfExecution" ColumnName="DateOfExecution" />
+                <ScalarProperty Name="DateOfCallback" ColumnName="DateOfCallback" />
+                <ScalarProperty Name="DateOfCreation" ColumnName="DateOfCreation" />
+                <ScalarProperty Name="EstimatedCompletionDate" ColumnName="EstimatedCompletionDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Streets">
+            <EntityTypeMapping TypeName="CableTVModel.Street">
+              <MappingFragment StoreEntitySet="Streets">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StreetName" ColumnName="StreetName" />
+                <ScalarProperty Name="StreetTypes" ColumnName="StreetTypes" />
+                <ScalarProperty Name="City_Id" ColumnName="City_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubscriberRelationships">
+            <EntityTypeMapping TypeName="CableTVModel.SubscriberRelationship">
+              <MappingFragment StoreEntitySet="SubscriberRelationships">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RelationshipDate" ColumnName="RelationshipDate" />
+                <ScalarProperty Name="SubscriberId" ColumnName="SubscriberId" />
+                <ScalarProperty Name="RelationshipType" ColumnName="RelationshipType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subscribers">
+            <EntityTypeMapping TypeName="CableTVModel.Subscriber">
+              <MappingFragment StoreEntitySet="Subscribers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NumberOfContract" ColumnName="NumberOfContract" />
+                <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+                <ScalarProperty Name="SecondMobilePhone" ColumnName="SecondMobilePhone" />
+                <ScalarProperty Name="RelationshipType" ColumnName="RelationshipType" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="StreetId" ColumnName="StreetId" />
+                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserActions">
+            <EntityTypeMapping TypeName="CableTVModel.UserAction">
+              <MappingFragment StoreEntitySet="UserActions">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateOfAction" ColumnName="DateOfAction" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="CableTVModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="LoggedIn" ColumnName="LoggedIn" />
+                <ScalarProperty Name="AdminRole" ColumnName="AdminRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_City_Test">
+            <EntityTypeMapping TypeName="CableTVModel.View_City_Test">
+              <MappingFragment StoreEntitySet="View_City_Test">
+                <ScalarProperty Name="ShortNameOfCityType" ColumnName="ShortNameOfCityType" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="MasterCities" TypeName="CableTVModel.MasterCities" StoreEntitySet="MasterCities">
+            <EndProperty Name="Cities">
+              <ScalarProperty Name="Id" ColumnName="City_Id" />
+            </EndProperty>
+            <EndProperty Name="Masters">
+              <ScalarProperty Name="Id" ColumnName="Master_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="Test_Procedure_Name" FunctionName="CableTVModel.Store.Test_Procedure_Name" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

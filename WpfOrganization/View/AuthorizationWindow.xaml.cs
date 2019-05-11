@@ -17,7 +17,7 @@ namespace WpfOrganization
         {
             InitializeComponent();
 
-            using (var ctx = new DatabaseContext(@"Data Source=.\SQLEXPRESS;Initial Catalog=CableTV;Integrated Security=True"))
+            using (var ctx = new DatabaseContext())
             {
                 var stud = new User() { Login = "Bill", Password = "", AdminRole = AdminRole.Dispatcher, LoggedIn = false};
                 ctx.Users.Add(stud);
