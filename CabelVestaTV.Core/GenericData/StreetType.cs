@@ -1,4 +1,4 @@
-﻿namespace WpfOrganization.GenericData
+﻿namespace CabelVestaTV.Core.GenericData
 {
     public enum StreetType
     {

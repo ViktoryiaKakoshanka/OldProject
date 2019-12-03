@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 using WpfOrganization.DAL.Entities;
-using WpfOrganization.GenericData;
+//using WpfOrganization.GenericData;
 
 namespace WpfOrganization.DAL.EF
 {
@@ -9,7 +9,7 @@ namespace WpfOrganization.DAL.EF
     {
         protected override void Seed(DatabaseContext db)
         {
-            db.Masters.Add(new Master
+           /* db.Masters.Add(new Master
             {
                 OrdersOnCableTv = null,
                 Name = "A",
@@ -77,7 +77,7 @@ namespace WpfOrganization.DAL.EF
                 Remark = "Test",                
             });
 
-            db.SaveChanges();
+            db.SaveChanges();*/
         }
     }
 }

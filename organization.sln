@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29403.142
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "organization", "organization\organization.csproj", "{1B492B36-4DFB-4E46-86A9-5D521F7FAC7B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfOrganization", "WpfOrganization\WpfOrganization.csproj", "{C363DF8A-8B4C-4D3F-9701-AB56C997706A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CabelVestaTV.Core", "CabelVestaTV.Core\CabelVestaTV.Core.csproj", "{CFAEB988-7BC5-4FAC-B3BB-59F3A49DE49E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CabelVestaTV.DAL", "CabelVestaTV.DAL\CabelVestaTV.DAL.csproj", "{2C08D08F-E1D0-4C9C-9919-E716F803B4D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,19 +33,35 @@ Global
 		{C363DF8A-8B4C-4D3F-9701-AB56C997706A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C363DF8A-8B4C-4D3F-9701-AB56C997706A}.Release|x86.ActiveCfg = Release|Any CPU
 		{C363DF8A-8B4C-4D3F-9701-AB56C997706A}.Release|x86.Build.0 = Release|Any CPU
+		{CFAEB988-7BC5-4FAC-B3BB-59F3A49DE49E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFAEB988-7BC5-4FAC-B3BB-59F3A49DE49E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFAEB988-7BC5-4FAC-B3BB-59F3A49DE49E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CFAEB988-7BC5-4FAC-B3BB-59F3A49DE49E}.Debug|x86.Build.0 = Debug|Any CPU
+		{CFAEB988-7BC5-4FAC-B3BB-59F3A49DE49E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFAEB988-7BC5-4FAC-B3BB-59F3A49DE49E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFAEB988-7BC5-4FAC-B3BB-59F3A49DE49E}.Release|x86.ActiveCfg = Release|Any CPU
+		{CFAEB988-7BC5-4FAC-B3BB-59F3A49DE49E}.Release|x86.Build.0 = Release|Any CPU
+		{2C08D08F-E1D0-4C9C-9919-E716F803B4D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C08D08F-E1D0-4C9C-9919-E716F803B4D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C08D08F-E1D0-4C9C-9919-E716F803B4D7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2C08D08F-E1D0-4C9C-9919-E716F803B4D7}.Debug|x86.Build.0 = Debug|Any CPU
+		{2C08D08F-E1D0-4C9C-9919-E716F803B4D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C08D08F-E1D0-4C9C-9919-E716F803B4D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C08D08F-E1D0-4C9C-9919-E716F803B4D7}.Release|x86.ActiveCfg = Release|Any CPU
+		{2C08D08F-E1D0-4C9C-9919-E716F803B4D7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {947175D5-9502-44D1-922F-FE0CCB0A1406}
-		VSStyle = GlasKalas Blue (Normal).vssf
-		VSTargetControls = FormsAndControls
-		VSToolStripStyle = Mixed
-		VSTextShadow = True
-		VSSkinFlatStyles = True
-		VSSkinToggleButtons = True
-		VSUseSystemFonts = False
 		VSCustomBkgrdPaint = True
+		VSUseSystemFonts = False
+		VSSkinToggleButtons = True
+		VSSkinFlatStyles = True
+		VSTextShadow = True
+		VSToolStripStyle = Mixed
+		VSTargetControls = FormsAndControls
+		VSStyle = GlasKalas Blue (Normal).vssf
+		SolutionGuid = {947175D5-9502-44D1-922F-FE0CCB0A1406}
 	EndGlobalSection
 EndGlobal

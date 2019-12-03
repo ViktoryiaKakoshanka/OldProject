@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace WpfOrganization.BLL.DTO
+namespace CabelVestaTV.Core.Models
 {
-    public class UserActionDTO
+    public class UserAction
     {
         public int Id { get; set; }
         public DateTime DateOfAction { get; set; }

@@ -77,9 +77,6 @@
     <Compile Include="BLL\Services\CityService.cs" />
     <Compile Include="BLL\Services\SubscriberService.cs" />
     <Compile Include="DAL\Repositories\SubscriberRepository.cs" />
-    <Compile Include="GenericData\OrderStatus.cs" />
-    <Compile Include="GenericData\RelationshipType.cs" />
-    <Compile Include="GenericData\StreetType.cs" />
     <Compile Include="ViewModel\OrderOnCableTVViewModel.cs" />
     <Compile Include="View\OrderOnCableTV.xaml.cs">
       <DependentUpon>OrderOnCableTV.xaml</DependentUpon>
@@ -92,19 +89,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BLL\DTO\AdminRole.cs" />
-    <Compile Include="BLL\DTO\CableTVProblemDTO.cs" />
-    <Compile Include="BLL\DTO\CityDTO.cs" />
-    <Compile Include="BLL\DTO\StreetDTO.cs" />
-    <Compile Include="BLL\DTO\MasterDTO.cs" />
-    <Compile Include="BLL\DTO\OrderOnCableTVDTO.cs" />
-    <Compile Include="BLL\DTO\OrderRepairAndRestructionDTO.cs" />
-    <Compile Include="BLL\DTO\RelationshipTypeDTO.cs" />
-    <Compile Include="BLL\DTO\StreetTypeDTO.cs" />
-    <Compile Include="BLL\DTO\SubscriberDTO.cs" />
-    <Compile Include="BLL\DTO\SubscriberRelationshipDTO.cs" />
-    <Compile Include="BLL\DTO\UserActionDTO.cs" />
-    <Compile Include="BLL\DTO\UserDTO.cs" />
     <Compile Include="BLL\Infrastructure\ServiceModule.cs" />
     <Compile Include="BLL\Infrastructure\ValidationException.cs" />
     <Compile Include="BLL\Interfaces\IOrderService.cs" />

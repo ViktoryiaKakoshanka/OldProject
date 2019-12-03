@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace WpfOrganization.BLL.DTO
+namespace CabelVestaTV.Core.Models
 {
-    public class SubscriberRelationshipDTO
+    public class SubscriberRelationship
     {
         public int Id { get; set; }
         public DateTime RelationshipDate { get; set; }

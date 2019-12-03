@@ -1,6 +1,6 @@
-﻿namespace WpfOrganization.BLL.DTO
+﻿namespace CabelVestaTV.Core.Models
 {
-    public class CableTVProblemDTO
+    public class CableTVProblem
     {
         public int Id { get; set; }
         public string NameOfProblem { get; set; }

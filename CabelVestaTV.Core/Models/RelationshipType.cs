@@ -1,6 +1,6 @@
-﻿namespace WpfOrganization.BLL.DTO
+﻿namespace CabelVestaTV.Core.Models
 {
-    public class RelationshipTypeDTO
+    public class RelationshipType
     {
         public int Id { get; set; }
         public string NameRelationship { get; set; }

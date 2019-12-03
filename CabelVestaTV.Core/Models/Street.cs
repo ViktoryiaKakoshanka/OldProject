@@ -1,8 +1,8 @@
-﻿using WpfOrganization.GenericData;
+﻿using CabelVestaTV.Core.GenericData;
 
-namespace WpfOrganization.BLL.DTO
+namespace CabelVestaTV.Core.Models
 {
-    public class StreetDTO
+    public class Street
     {
         public int Id { get; set; }
         public string StreetName { get; set; }
